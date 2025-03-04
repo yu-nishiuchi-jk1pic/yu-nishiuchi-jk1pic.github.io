@@ -4,15 +4,38 @@ This guide explains the process of forking an academic website template, replaci
 
 ## Table of Contents
 
-1. [Fork the repository on GitHub](#1-fork-the-repository-on-github)
-2. [Change repository settings](#2-change-repository-settings)
-3. [Edit profile information](#3-edit-profile-information)
-4. [Configure homepage and multilingual support](#4-configure-homepage-and-multilingual-support)
-5. [Edit career and award information](#5-edit-career-and-award-information)
-6. [Update publication information](#6-update-publication-information)
-7. [Change profile images](#7-change-profile-images)
-8. [Publish on GitHub Pages](#8-publish-on-github-pages)
-9. [Troubleshooting](#9-troubleshooting)
+- [Academic Website Template User Guide](#academic-website-template-user-guide)
+  - [Table of Contents](#table-of-contents)
+  - [1. Fork the repository on GitHub](#1-fork-the-repository-on-github)
+  - [2. Change repository settings](#2-change-repository-settings)
+    - [1. Grant write permissions to GitHub Actions](#1-grant-write-permissions-to-github-actions)
+  - [3. Edit profile information](#3-edit-profile-information)
+    - [Edit English configuration file](#edit-english-configuration-file)
+    - [Edit Japanese configuration file](#edit-japanese-configuration-file)
+  - [4. Configure homepage and multilingual support](#4-configure-homepage-and-multilingual-support)
+    - [English bio](#english-bio)
+    - [Japanese bio](#japanese-bio)
+  - [5. Edit career and award information](#5-edit-career-and-award-information)
+    - [Edit career information](#edit-career-information)
+    - [Edit awards](#edit-awards)
+    - [Edit research grants information](#edit-research-grants-information)
+    - [Edit project information](#edit-project-information)
+  - [6. Update publication information](#6-update-publication-information)
+    - [Get data from ResearchMap](#get-data-from-researchmap)
+    - [Upload CSV files](#upload-csv-files)
+    - [Directly edit existing CSV files](#directly-edit-existing-csv-files)
+  - [7. Change profile images](#7-change-profile-images)
+  - [8. Change title and favicon in index.html](#8-change-title-and-favicon-in-indexhtml)
+    - [Change the title](#change-the-title)
+    - [Change the favicon](#change-the-favicon)
+  - [9. Publish on GitHub Pages](#9-publish-on-github-pages)
+    - [Re-run the deployment workflow](#re-run-the-deployment-workflow)
+  - [10. Troubleshooting](#10-troubleshooting)
+    - [API data generation issues](#api-data-generation-issues)
+    - [Multilingual switching issues](#multilingual-switching-issues)
+    - [Build errors](#build-errors)
+    - [Other issues](#other-issues)
+  - [Extended Customization](#extended-customization)
 
 ## 1. Fork the repository on GitHub
 
@@ -267,7 +290,31 @@ Change your profile picture and laboratory logo.
 
 > **Tip**: Pay attention to the image size and aspect ratio. Square (1:1) is recommended for profile images, and landscape format for logos.
 
-## 8. Publish on GitHub Pages
+## 8. Change title and favicon in index.html
+
+Change your website title and favicon.
+
+### Change the title
+
+1. Open the `public/index.html` file in your forked repository
+2. Find the `<title>Your Name</title>` tag
+3. Change `Your Name` to your website title
+   - Example: `<title>Taro Yamada's Laboratory</title>`
+4. Save the changes
+
+> **Meaning**: The title tag specifies the title of the web page that is displayed in the browser tab and search engine results. Setting an appropriate title makes it easier for visitors to understand and helps with search engine optimization (SEO).
+
+### Change the favicon
+
+1. Open the `public/favicon.svg` file in your forked repository
+2. Prepare a new SVG favicon file
+3. Replace the `favicon.svg` file with your new SVG file
+   - Example: Replace `public/favicon.svg` with your new favicon file
+4. Save the changes
+
+> **Meaning**: A favicon is a small icon displayed in the browser tab and bookmarks. Setting your own favicon can increase brand recognition for your website.
+
+## 9. Publish on GitHub Pages
 
 Publish your site on GitHub Pages.
 
@@ -290,7 +337,7 @@ If needed, re-run the workflow with these steps:
 3. Click the "Run workflow" button in the top right
 4. Click the "Run workflow" button again to start the execution
 
-## 9. Troubleshooting
+## 10. Troubleshooting
 
 Here are some solutions for common issues.
 
@@ -332,7 +379,7 @@ After completing the basic setup, you can further customize these parts:
 
 1. Change the color scheme in `tailwind.config.js`
 2. Edit component files in `src/components` to adjust the layout and functionality
-3. Update meta tags and favicon in `public/index.html`
+3. Update meta tags in `public/index.html`
 
 ---
 
