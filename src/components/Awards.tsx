@@ -37,9 +37,10 @@ const Awards: React.FC = () => {
         const grantsData = await grantsResponse.json();
         const projectsData = await projectsResponse.json();
 
-        setAwards(awardsData);
-        setGrants(grantsData);
-        setProjects(projectsData);
+        // 現在の順序を逆にするために配列を反転
+        setAwards([...awardsData].reverse());
+        setGrants([...grantsData].reverse());
+        setProjects([...projectsData].reverse());
 
         // データが空の場合、表示可能な最初のタブをアクティブにする
         const setDefaultActiveTab = () => {
