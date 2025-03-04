@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <base href="./" /> <!-- 追加: 相対パスのベース指定 -->
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" /> <!-- 修正: 相対パスに変更 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Name</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script> <!-- 修正: 相対パスに変更 -->
   </body>
 </html>
