@@ -3,14 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # デフォルトブランチ名（mainまたはmaster）
+      - main  # デフォルトブランチ名
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # これを追加！リポジトリへの書き込み権限を明示的に付与
+      contents: write  # リポジトリへの書き込み権限を明示的に付与
 
     steps:
       - name: Checkout
@@ -29,9 +29,34 @@ jobs:
 
       - name: Build
         run: npm run build
+        # postbuildスクリプトで自動的にSEOファイル（sitemap.xml、robots.txt）が生成されます
+
+      - name: Create .nojekyll file
+        run: touch dist/.nojekyll
+
+      # デバッグ：生成されたファイルを確認
+      - name: Debug - Check generated files
+        run: |
+          echo "Checking dist directory content:"
+          ls -la dist/
+
+          if [ -f "dist/sitemap.xml" ]; then
+            echo "✓ sitemap.xml exists"
+            head -n 10 dist/sitemap.xml
+          else
+            echo "✗ sitemap.xml does not exist!"
+          fi
+
+          if [ -f "dist/robots.txt" ]; then
+            echo "✓ robots.txt exists"
+            cat dist/robots.txt
+          else
+            echo "✗ robots.txt does not exist!"
+          fi
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist  # ビルド出力ディレクトリ
           branch: gh-pages  # デプロイ先ブランチ
+          clean: true  # デプロイ前にgh-pagesブランチをクリーンアップ

@@ -24,10 +24,12 @@ This guide explains the process of forking an academic website template, replaci
     - [Get data from ResearchMap](#get-data-from-researchmap)
     - [Upload CSV files](#upload-csv-files)
     - [Directly edit existing CSV files](#directly-edit-existing-csv-files)
-  - [7. Change profile images](#7-change-profile-images)
-  - [8. Change title and favicon in index.html](#8-change-title-and-favicon-in-indexhtml)
-    - [Change the title](#change-the-title)
-    - [Change the favicon](#change-the-favicon)
+  - [7. Changing Profile Images and Favicon](#7-changing-profile-images-and-favicon)
+    - [Changing Images](#changing-images)
+    - [Changing the Favicon](#changing-the-favicon)
+  - [8. SEO Optimization Customization](#8-seo-optimization-customization)
+    - [Generating sitemap.xml and robots.txt](#generating-sitemapxml-and-robotstxt)
+    - [Editing index.html](#editing-indexhtml)
   - [9. Publish on GitHub Pages](#9-publish-on-github-pages)
     - [Re-run the deployment workflow](#re-run-the-deployment-workflow)
   - [10. Troubleshooting](#10-troubleshooting)
@@ -52,10 +54,9 @@ First, fork the template repository to your GitHub account.
 
 Change the basic settings of your forked repository.
 
-1. Click the "Settings" tab on your forked repository page
-2. Change the "Repository name" in the "General" section if needed
-3. Scroll down to find the "GitHub Pages" section
-4. Select "GitHub Actions" as the source (for using the deployment workflow)
+1. Click the "Settings" tab on the page of the forked repository.
+2. Find the "GitHub Pages" section in the left-hand menu.
+3. Select "GitHub Actions" as the source (to use the deployment workflow).
 
 > **Note**: If there is no deployment workflow, you will set it up in a later step.
 
@@ -277,42 +278,67 @@ Update your research publication information (papers and presentations) using CS
 
 > **Note**: The first line is skipped, so put the header on the second line and records from the third line onward.
 
-## 7. Change profile images
+## 7. Changing Profile Images and Favicon
 
-Change your profile picture and laboratory logo.
+### Changing Images
+
+Change your profile image and lab logo.
 
 1. Open the `public/images` directory in your forked repository
 2. Click "Add file" → "Upload files"
-3. Upload a new profile image as `profile.png`
+3. Upload your new profile image named `profile.png`
    - Or replace the existing `profile.png`
-4. Upload a laboratory logo as `lab-logo.png`
-5. Click the "Commit changes..." button to commit the changes
+4. Upload your lab logo named `lab-logo.png`
+5. Click the "Commit changes..." button to commit your changes
 
-> **Tip**: Pay attention to the image size and aspect ratio. Square (1:1) is recommended for profile images, and landscape format for logos.
+> **Tip**: Pay attention to image size and aspect ratio. A square format (1:1) is recommended for profile images, while a landscape format is recommended for logos.
 
-## 8. Change title and favicon in index.html
-
-Change your website title and favicon.
-
-### Change the title
-
-1. Open the `public/index.html` file in your forked repository
-2. Find the `<title>Your Name</title>` tag
-3. Change `Your Name` to your website title
-   - Example: `<title>Taro Yamada's Laboratory</title>`
-4. Save the changes
-
-> **Meaning**: The title tag specifies the title of the web page that is displayed in the browser tab and search engine results. Setting an appropriate title makes it easier for visitors to understand and helps with search engine optimization (SEO).
-
-### Change the favicon
+### Changing the Favicon
 
 1. Open the `public/favicon.svg` file in your forked repository
-2. Prepare a new SVG favicon file
+2. Prepare a new SVG file for your favicon
 3. Replace the `favicon.svg` file with your new SVG file
    - Example: Replace `public/favicon.svg` with your new favicon file
-4. Save the changes
+4. Save your changes
 
-> **Meaning**: A favicon is a small icon displayed in the browser tab and bookmarks. Setting your own favicon can increase brand recognition for your website.
+> **Meaning**: A favicon is a small icon displayed in browser tabs and bookmarks. Setting your own favicon helps increase brand recognition for your website.
+
+## 8. SEO Optimization Customization
+
+### Generating sitemap.xml and robots.txt
+
+Change the URL to your GitHub Pages URL.
+1. Open the `scripts/generateSeoFiles.cjs` file in your forked repository
+2. Replace the following section with your GitHub username:
+   ```javascript
+   // Configuration - Please change the site URL to your actual one
+   const SITE_URL = 'https://username.github.io';
+   ```
+3. Save and commit your changes
+
+> **Tip**: This will generate `https://username.github.io/sitemap.xml` and `https://username.github.io/robots.txt`.
+
+### Editing index.html
+
+Customize the SEO and Google Search Console information in the index.html file.
+
+1. Open the `public/index.html` file in your forked repository
+2. Replace the following information with your GitHub username or full name:
+   - Change the content inside the `<title>` tag to your name
+   - Edit the `content` attribute of `<meta name="description">` to match your research
+   - Change the `content` attribute of `<meta name="author">` to your name
+   - Change the `href` attribute of `<link rel="canonical">` to the URL of your GitHub Pages
+   - Change `"url"` and `"target"` in `<script type="application/ld+json">` to the URL of your GitHub Pages
+3. Save and commit your changes
+
+> **Tip**: Proper SEO configuration improves how your site appears in search engines.
+
+Changing the Favicon
+
+1. Prepare a new svg file for your favicon
+2. Place the new favicon.svg file in the /public directory
+
+> **Tip**: A favicon is a small icon that appears in the browser tab or bookmarks representing your website.
 
 ## 9. Publish on GitHub Pages
 
