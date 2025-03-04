@@ -1,0 +1,12 @@
+[
+  {
+    "id": "paper-1",
+    "title": "Your Paper Title 1",
+    "authors": "Author 1, Author 2",
+    "venue": "Journal Name",
+    "year": "2023",
+    "month": "01",
+    "doi": "10.1234/abcd",
+    "isMainWork": false
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "project-1",
+    "title": "ユニバーサルツール",
+    "description": "一般的なデータ分析のためのオープンソースツール",
+    "url": "https://github.com/username/universal-tool",
+    "language": "Python",
+    "languageColor": "#3572A5"
+  },
+  {
+    "id": "project-2",
+    "title": "グローバルDB",
+    "description": "様々な観測から抽出された普遍的な特性のデータベース",
+    "url": "https://github.com/username/global-db",
+    "language": "JavaScript",
+    "languageColor": "#f1e05a"
+  },
+  {
+    "id": "project-3",
+    "title": "ジェネラルML",
+    "description": "一般的な画像処理のための機械学習ライブラリ",
+    "url": "https://github.com/username/general-ml",
+    "language": "Julia",
+    "languageColor": "#a270ba"
+  }
+]

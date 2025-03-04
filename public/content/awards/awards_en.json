@@ -1,0 +1,23 @@
+[
+    {
+      "id": "award-1",
+      "title": "Outstanding Research Award",
+      "awarder": "International Society for Electron Microscopy",
+      "date": "2023-06",
+      "description": ""
+    },
+    {
+      "id": "award-2",
+      "title": "Young Scientist Award",
+      "awarder": "Japan Society of Applied Physics",
+      "date": "2021-09",
+      "description": ""
+    },
+    {
+      "id": "award-3",
+      "title": "Best Paper Award",
+      "awarder": "Materials Research Society",
+      "date": "2020-12",
+      "description": ""
+    }
+  ]

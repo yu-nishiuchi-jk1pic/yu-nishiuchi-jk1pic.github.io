@@ -1,0 +1,18 @@
+[
+    {
+      "id": "grant-1",
+      "title": "Research Grant Title 1",
+      "funder": "Funding Organization 1",
+      "number": "1234567890",
+      "period": "2022-2025",
+      "description": "Description of Research Grant 1"
+    },
+    {
+      "id": "grant-2",
+      "title": "Research Grant Title 2",
+      "funder": "Funding Organization 2",
+      "number": "0987654321",
+      "period": "2021-2023",
+      "description": "Description of Research Grant 2"
+    }
+  ]

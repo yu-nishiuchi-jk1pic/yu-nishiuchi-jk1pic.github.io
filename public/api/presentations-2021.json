@@ -1,0 +1,12 @@
+[
+  {
+    "id": "presentation-2",
+    "title": "Your Presentation Title2",
+    "speakers": "Author 1, Author 2",
+    "conference": "Conference Name",
+    "date": "2021-01-04",
+    "year": "2021",
+    "place": "Location",
+    "isInvited": false
+  }
+]

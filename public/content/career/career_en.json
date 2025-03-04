@@ -1,0 +1,22 @@
+[
+    {
+      "id": "career-1",
+      "position": "Assistant Professor",
+      "organization": "Renowned Educational Institution",
+      "location": "Japan",
+      "startDate": "2020",
+      "endDate": null,
+      "description": "Led research in a specific field.",
+      "type": "work"
+    },
+    {
+      "id": "career-2",
+      "position": "PhD",
+      "organization": "Renowned Educational Institution",
+      "location": "Japan",
+      "startDate": "2010",
+      "endDate": "2013",
+      "description": "Thesis topic: Research on a specific technology",
+      "type": "education"
+    }
+]

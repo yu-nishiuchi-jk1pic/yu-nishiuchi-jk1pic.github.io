@@ -1,0 +1,22 @@
+[
+  {
+    "id": "career-1",
+    "position": "助教",
+    "organization": "有名な教育機関",
+    "location": "日本",
+    "startDate": "2020",
+    "endDate": null,
+    "description": "特定分野の研究を主導。",
+    "type": "work"
+  },
+  {
+    "id": "career-2",
+    "position": "博士号取得",
+    "organization": "有名な教育機関",
+    "location": "日本",
+    "startDate": "2010",
+    "endDate": "2013",
+    "description": "論文テーマ: 特定の技術に関する研究",
+    "type": "education"
+  }
+]

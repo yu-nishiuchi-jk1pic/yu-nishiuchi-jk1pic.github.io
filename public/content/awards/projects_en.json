@@ -1,0 +1,26 @@
+[
+    {
+      "id": "project-1",
+      "title": "Universal Tool",
+      "description": "Open source tool for general data analysis",
+      "url": "https://github.com/username/universal-tool",
+      "language": "Python",
+      "languageColor": "#3572A5"
+    },
+    {
+      "id": "project-2",
+      "title": "GlobalDB",
+      "description": "Database of universal properties extracted from various observations",
+      "url": "https://github.com/username/global-db",
+      "language": "JavaScript",
+      "languageColor": "#f1e05a"
+    },
+    {
+      "id": "project-3",
+      "title": "GeneralML",
+      "description": "Machine learning library for general image processing",
+      "url": "https://github.com/username/general-ml",
+      "language": "Julia",
+      "languageColor": "#a270ba"
+    }
+  ]

@@ -1,0 +1,79 @@
+{
+    "header": {
+      "name": "Your Name"
+    },
+    "nav": {
+      "bio": "About",
+      "publications": "Publications",
+      "awards": "Awards",
+      "career": "Career",
+      "contact": "Contact"
+    },
+    "bio": {
+      "name": "Your Name",
+      "nameJp": "あなたの名前",
+      "position": "Assistant Professor",
+      "affiliation": "Renowned Educational Institution",
+      "email": "your.email@example.com",
+      "github": "https://github.com/yourusername",
+      "scholar": "https://scholar.google.com/citations?user=your-id",
+      "researchmap": "",
+      "researchInterests": "Research Interests",
+      "researchTags": [
+        "Mathematics",
+        "Physics",
+        "Computer Science",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Science",
+        "Optimization"
+      ]
+    },
+    "publications": {
+      "title": "Publications",
+      "papers": "Papers",
+      "presentations": "Presentations",
+      "allYears": "All Years",
+      "mainWork": "Main Work",
+      "invited": "Invited",
+      "noPapers": "No papers found for this year.",
+      "noPresentations": "No presentations found for this year.",
+      "showAll": "Show All"
+    },
+    "awards": {
+      "title": "Awards & Projects",
+      "honorsAndAwards": "Honors & Awards",
+      "grants": "Grants & Funding",
+      "projects": "Projects",
+      "noData": "No data available.",
+      "showAll": "Show All"
+    },
+    "career": {
+      "title": "Career",
+      "education": "Education",
+      "work": "Work Experience",
+      "present": "Present",
+      "noData": "No career data available."
+    },
+    "contact": {
+      "title": "Contact",
+      "info": "Contact Information",
+      "location": "Location",
+      "relatedLinks": "Related Links",
+      "email": "Email",
+      "address": "Address",
+      "addressLine1": "Address 1",
+      "addressLine2": "Address 2",
+      "addressLine3": "Address 3",
+      "socialMedia": "Social Media",
+      "linkedin": "https://www.linkedin.com/in/your-linkedin-profile/",
+      "facebook": "",
+      "twitter": "",
+      "labName": "Laboratory Name",
+      "labURL": "https://example.com"
+    },
+    "footer": {
+      "allRightsReserved": "All Rights Reserved.",
+      "templateText": "This website is based on a template available on "
+    }
+  }

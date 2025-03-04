@@ -1,0 +1,22 @@
+[
+  {
+    "id": "paper-4",
+    "title": "Your Paper Title 4",
+    "authors": "Author 1, Author 2",
+    "venue": "Journal Name",
+    "year": "2024",
+    "month": "11",
+    "doi": "10.1234/abcd",
+    "isMainWork": true
+  },
+  {
+    "id": "paper-3",
+    "title": "あなたの論文タイトル3",
+    "authors": "Author 1, Author 2",
+    "venue": "Journal Name",
+    "year": "2024",
+    "month": "01",
+    "doi": "10.1234/abcd",
+    "isMainWork": true
+  }
+]

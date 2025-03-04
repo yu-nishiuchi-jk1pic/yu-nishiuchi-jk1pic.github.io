@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003366;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0066cc;
+}
+
+/* セクションの区切り */
+section:not(:first-of-type) {
+  border-top: 1px solid #f0f0f0;
+}
+
+/* マークダウンコンテンツのスタイル */
+.prose {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.prose a {
+  @apply text-secondary hover:text-accent transition-colors;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply text-primary font-semibold;
+}
+
+.prose h1 {
+  @apply text-2xl mt-6 mb-4;
+}
+
+.prose h2 {
+  @apply text-xl mt-5 mb-3;
+}
+
+.prose h3 {
+  @apply text-lg mt-4 mb-2;
+}
+
+.prose p {
+  @apply my-3;
+}
+
+.prose ul, .prose ol {
+  @apply my-3 ml-6;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-4;
+}
+
+.prose code {
+  @apply bg-gray-100 rounded px-1;
+}
+
+.prose pre {
+  @apply bg-gray-800 text-white p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose pre code {
+  @apply bg-transparent text-white;
+}
