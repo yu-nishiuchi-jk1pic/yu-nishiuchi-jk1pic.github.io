@@ -288,20 +288,10 @@ Change your profile image and lab logo.
 2. Click "Add file" → "Upload files"
 3. Upload your new profile image named `profile.png`
    - Or replace the existing `profile.png`
-4. Upload your lab logo named `lab-logo.png`
-5. Click the "Commit changes..." button to commit your changes
+4. Click the "Commit changes..." button to commit your changes
 
 > **Tip**: Pay attention to image size and aspect ratio. A square format (1:1) is recommended for profile images, while a landscape format is recommended for logos.
 
-### Changing the Favicon
-
-1. Open the `public/favicon.svg` file in your forked repository
-2. Prepare a new SVG file for your favicon
-3. Replace the `favicon.svg` file with your new SVG file
-   - Example: Replace `public/favicon.svg` with your new favicon file
-4. Save your changes
-
-> **Meaning**: A favicon is a small icon displayed in browser tabs and bookmarks. Setting your own favicon helps increase brand recognition for your website.
 
 ## 8. SEO Optimization Customization
 
@@ -332,13 +322,6 @@ Customize the SEO and Google Search Console information in the index.html file.
 3. Save and commit your changes
 
 > **Tip**: Proper SEO configuration improves how your site appears in search engines.
-
-Changing the Favicon
-
-1. Prepare a new svg file for your favicon
-2. Place the new favicon.svg file in the /public directory
-
-> **Tip**: A favicon is a small icon that appears in the browser tab or bookmarks representing your website.
 
 ## 9. Publish on GitHub Pages
 
