@@ -43,7 +43,7 @@ This guide explains the process of forking an academic website template, replaci
 
 First, fork the template repository to your GitHub account.
 
-1. Go to the template repository page (https://github.com/kotabata/academic-website)
+1. Go to the template repository page (https://github.com/sigma-users/personal-website-template)
 2. Click the "Fork" button in the top right
 3. Change the repository name if needed (e.g., `yourusername.github.io`)
 4. Click the "Create Fork" button to complete the process

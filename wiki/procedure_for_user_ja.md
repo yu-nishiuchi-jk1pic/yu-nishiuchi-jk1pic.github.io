@@ -43,7 +43,7 @@
 
 まず、テンプレートリポジトリをあなたのGitHubアカウントにフォークします。
 
-1. テンプレートリポジトリのページ（https://github.com/kotabata/academic-website ）にアクセスします
+1. テンプレートリポジトリのページ（ https://github.com/sigma-users/personal-website-template ）にアクセスします
 2. 右上の「Fork」ボタンをクリックします
 3. 必要に応じてリポジトリ名を変更します（例：`yourusername.github.io`）
 4. 「Create Fork」ボタンをクリックしてフォークを完了します
