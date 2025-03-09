@@ -52,12 +52,30 @@ const Bio: React.FC = () => {
           <div className="flex-1">
             <div className="mb-6 text-center md:text-left">
               <h1 className="text-3xl font-bold text-primary mb-1">
-                {t("bio.name")}
-                {t("bio.phd") && ` | ${t("bio.phd")}`}
+                {i18n.language === "en" ? (
+                  <>
+                    {t("bio.name")}
+                    {t("bio.phd") && ` | ${t("bio.phd")}`}
+                  </>
+                ) : (
+                  <>
+                    {t("bio.nameJp")}
+                    {t("bio.phdJp") && ` | ${t("bio.phdJp")}`}
+                  </>
+                )}
               </h1>
               <h2 className="text-xl text-gray-700 mb-1">
-                {t("bio.nameJp")}
-                {t("bio.phdJp") && ` | ${t("bio.phdJp")}`}
+                {i18n.language === "en" ? (
+                  <>
+                    {t("bio.nameJp")}
+                    {t("bio.phdJp") && ` | ${t("bio.phdJp")}`}
+                  </>
+                ) : (
+                  <>
+                    {t("bio.name")}
+                    {t("bio.phd") && ` | ${t("bio.phd")}`}
+                  </>
+                )}
               </h2>
               <p className="text-lg text-gray-600">
                 {t("bio.position")} | {t("bio.affiliation")}
