@@ -53,8 +53,12 @@ const Bio: React.FC = () => {
             <div className="mb-6 text-center md:text-left">
               <h1 className="text-3xl font-bold text-primary mb-1">
                 {t("bio.name")}
+                {t("bio.phd") && ` | ${t("bio.phd")}`}
               </h1>
-              <h2 className="text-xl text-gray-700 mb-1">{t("bio.nameJp")}</h2>
+              <h2 className="text-xl text-gray-700 mb-1">
+                {t("bio.nameJp")}
+                {t("bio.phdJp") && ` | ${t("bio.phdJp")}`}
+              </h2>
               <p className="text-lg text-gray-600">
                 {t("bio.position")} | {t("bio.affiliation")}
               </p>
@@ -62,21 +66,19 @@ const Bio: React.FC = () => {
 
             {/* ソーシャルリンク */}
             <div className="flex justify-center md:justify-start space-x-4 mb-6">
-              {t("bio.email") !== "" && (
-                <a
-                  href={`mailto:${t("bio.email")}`}
-                  className="text-secondary hover:text-accent transition-colors"
-                  aria-label="Email"
-                >
-                  <MdOutlineMailOutline className="h-6 w-6" />
-                </a>
-              )}
+              <a
+                href="#contact"
+                className="text-secondary hover:text-accent transition-colors"
+                aria-label="Contact"
+              >
+                <MdOutlineMailOutline className="h-6 w-6" />
+              </a>
               {t("bio.github") !== "" && (
                 <a
                   href={t("bio.github")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-secondary hover:text-accent transition-colors"
+                  className="black hover:text-accent transition-colors"
                   aria-label="GitHub"
                 >
                   <FaGithub className="h-6 w-6" />
@@ -91,6 +93,21 @@ const Bio: React.FC = () => {
                   aria-label="Google Scholar"
                 >
                   <FaGoogleScholar className="h-6 w-6" />
+                </a>
+              )}
+              {t("bio.orcid") !== "" && (
+                <a
+                  href={t("bio.orcid")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary hover:text-accent transition-colors"
+                  aria-label="ORCID"
+                >
+                  <img
+                    src="/ORCID-iD_icon_vector.svg"
+                    alt="ORCID"
+                    className="h-6 w-6"
+                  />
                 </a>
               )}
               {t("bio.researchmap") !== "" && (

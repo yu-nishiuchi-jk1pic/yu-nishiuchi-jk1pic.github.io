@@ -26,7 +26,6 @@ This guide explains the process of forking an academic website template, replaci
     - [Directly edit existing CSV files](#directly-edit-existing-csv-files)
   - [7. Changing Profile Images and Favicon](#7-changing-profile-images-and-favicon)
     - [Changing Images](#changing-images)
-    - [Changing the Favicon](#changing-the-favicon)
   - [8. SEO Optimization Customization](#8-seo-optimization-customization)
     - [Generating sitemap.xml and robots.txt](#generating-sitemapxml-and-robotstxt)
     - [Editing index.html](#editing-indexhtml)
@@ -81,19 +80,22 @@ Edit the multilingual configuration files to update your profile information.
    - `header.name`: Name displayed in the header
    - `bio.name`: English name
    - `bio.nameJp`: Japanese name
+   - `bio.phd`: English PhD name if applicable (set to `""` if not)
+   - `bio.phdJp`: Japanese PhD name if applicable (set to `""` if not)
    - `bio.position`: Position (e.g., "Associate Professor")
    - `bio.affiliation`: Affiliation (e.g., "Department of Engineering, University of Tokyo")
    - `bio.email`: Email address
-   - `bio.github`, `bio.scholar`, `bio.researchmap`: Links to your profile pages
+   - `bio.github`, `bio.scholar`, `bio.orcid`, `bio.researchmap`: Links to your profile pages (set to `""` if not)
    - `bio.researchTags`: Array of research keywords
+   - `contact.emailAdress`: EMail adress（`hoge[at]sigma.t.u-tokyo.ac.jp`）
+   - `contact.phoneNumber`: Phone number
    - `contact.addressLine1`, `contact.addressLine2`, `contact.addressLine3`: Address lines
-   - `contact.linkedin`, `contact.facebook`, `contact.twitter`: Social media links
-   - `contact.labName`: Laboratory name
-   - `contact.labURL`: Laboratory URL
+   - `contact.linkedin`, `contact.facebook`, `contact.twitter`: Social media links (set to `""` if not)
 4. Click the "Commit changes..." button to save changes
 5. Enter a commit message (e.g., "Update English profile information") and click "Commit changes"
 
 > **Tip**: For unnecessary items, set an empty string `""` or enter `null`.
+> **Tip**: If you want to remove the social media links at the bottom of the page, set `contact.socialMedia` to `""`.
 
 ### Edit Japanese configuration file
 
@@ -115,6 +117,7 @@ Edit the bio markdown files.
    - Describe your research, career highlights, specialties, etc.
    - Utilize bullet points (`-`) as needed
 4. Click the "Commit changes..." button to save changes
+> **Tip**: By default, GitHub and ORCID are displayed as icons. If you prefer to display them as text, set `bio.github`, `bio.orcid`, etc., to `""` and include them in this markdown file as `- GitHub: [https://github.com](https://github.com)`. Refer to the examples in this template for guidance.
 
 ### Japanese bio
 

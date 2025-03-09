@@ -26,7 +26,6 @@
     - [既存のCSVファイルを直接編集する場合](#既存のcsvファイルを直接編集する場合)
   - [7. プロフィール画像の変更とファビコンの変更](#7-プロフィール画像の変更とファビコンの変更)
     - [画像の変更](#画像の変更)
-    - [ファビコンの変更](#ファビコンの変更)
   - [8. SEO対策のカスタマイズ](#8-seo対策のカスタマイズ)
     - [sitemap.xmlとrobots.txtの生成](#sitemapxmlとrobotstxtの生成)
     - [index.htmlの編集](#indexhtmlの編集)
@@ -81,19 +80,21 @@
    - `header.name`: ヘッダーに表示される名前
    - `bio.name`: 英語の名前
    - `bio.nameJp`: 日本語の名前
+   - `bio.phd`: phdがある場合の英語phd名（ない場合`""`を設定）
+   - `bio.phdJp`: phdがある場合の日本語phd名（ない場合`""`を設定）
    - `bio.position`: 役職（例：「Associate Professor」）
    - `bio.affiliation`: 所属（例：「Department of Engineering, University of Tokyo」）
-   - `bio.email`: メールアドレス
-   - `bio.github`, `bio.scholar`, `bio.researchmap`: 各種プロフィールページへのリンク
+   - `bio.github`, `bio.scholar`, `bio.orcid`, `bio.researchmap`: 各種プロフィールページへのリンク（ない場合は`""`を設定）
    - `bio.researchTags`: 研究キーワードの配列
+   - `contact.emailAdress`: メールアドレス（`hoge[at]sigma.t.u-tokyo.ac.jp`とする）
+   - `contact.phoneNumber`: 電話番号
    - `contact.addressLine1`, `contact.addressLine2`, `contact.addressLine3`: 住所の各行
-   - `contact.linkedin`, `contact.facebook`, `contact.twitter`: 各種ソーシャルメディアのリンク
-   - `contact.labName`: 研究室名
-   - `contact.labURL`: 研究室のURL
+   - `contact.linkedin`, `contact.facebook`, `contact.twitter`: 各種ソーシャルメディアのリンク（ない場合`""`を設定）
 4. 「Commit changes...」ボタンをクリックして変更を保存します
 5. コミットメッセージを入力（例：「Update English profile information」）して「Commit changes」をクリックします
 
 > **ヒント**: 不要な項目は`""`のように空文字を設定するか`null`を記入してください。
+> **ヒント**: ページ下部のソーシャルメディアを削除したい場合は`contact.socialMedia`を`""`にすると消えます。
 
 ### 日本語の設定ファイル編集
 
@@ -115,6 +116,8 @@
    - 研究内容、経歴のハイライト、専門分野などを記述します
    - 箇条書き（`-`）も活用できます
 4. 「Commit changes...」ボタンをクリックして変更を保存します
+
+> **ヒント**: デフォルトではGithubやORCIDなどはIcon表記されます。テキストで表記したい場合は`bio.github`、`bio.orcid`などを`""`にして、こちらのマークダウンファイル`- Github: [https://github.com](https://github.com)`に記載してください。本テンプレートに例があるので参考にしてください。
 
 ### 日本語版の自己紹介文
 

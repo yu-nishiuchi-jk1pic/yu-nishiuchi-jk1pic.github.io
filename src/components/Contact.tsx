@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import { CiPhone, CiMail, CiLocationOn } from "react-icons/ci";
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -23,55 +24,29 @@ const Contact: React.FC = () => {
               <div className="space-y-4">
                 {/* メールアドレス */}
                 <div className="flex items-start">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-3 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
+                  <CiMail className="h-6 w-6 mr-4 flex-shrink-0" />
                   <div>
                     <h4 className="font-medium text-accent">
                       {t("contact.email")}
                     </h4>
-                    <a
-                      href={`mailto:${t("bio.email")}`}
-                      className="hover:underline"
-                    >
-                      {t("bio.email")}
-                    </a>
+                    {t("contact.emailAdress")}
+                  </div>
+                </div>
+
+                {/* 電話番号 */}
+                <div className="flex items-start">
+                  <CiPhone className="h-6 w-6 mr-4 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-accent">
+                      {t("contact.phone")}
+                    </h4>
+                    {t("contact.phoneNumber")}
                   </div>
                 </div>
 
                 {/* 住所 */}
                 <div className="flex items-start">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-3 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
+                  <CiLocationOn className="h-6 w-6 mr-4 flex-shrink-0" />
                   <div>
                     <h4 className="font-medium text-accent">
                       {t("contact.address")}
@@ -86,13 +61,14 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                {/* 電話番号など必要に応じて追加 */}
-
                 {/* SNSリンク */}
                 <div className="pt-2">
-                  <h4 className="font-medium text-accent mb-2">
-                    {t("contact.socialMedia")}
-                  </h4>
+                  {t("contact.socialMedia") &&
+                    t("contact.socialMedia") !== "" && (
+                      <h4 className="font-medium text-accent mb-2">
+                        {t("contact.socialMedia")}
+                      </h4>
+                    )}
                   <div className="flex space-x-4">
                     {t("contact.linkedin") && t("contact.linkedin") !== "" && (
                       <a
