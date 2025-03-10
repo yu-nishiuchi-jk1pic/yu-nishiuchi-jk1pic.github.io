@@ -84,60 +84,75 @@ const Bio: React.FC = () => {
 
             {/* ソーシャルリンク */}
             <div className="flex justify-center md:justify-start space-x-4 mb-6">
-              <a
-                href="#contact"
-                className="text-secondary hover:text-accent transition-colors"
-                aria-label="Contact"
-              >
-                <MdOutlineMailOutline className="h-6 w-6" />
-              </a>
-              {t("bio.github") !== "" && (
+              <div className="flex flex-col items-center">
                 <a
-                  href={t("bio.github")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="black hover:text-accent transition-colors"
-                  aria-label="GitHub"
+                  href="#contact"
+                  className="text-secondary hover:text-accent transition-colors"
+                  aria-label="Contact"
                 >
-                  <FaGithub className="h-6 w-6" />
+                  <MdOutlineMailOutline className="h-6 w-6" />
                 </a>
+                <span className="text-sm text-gray-600">Contact</span>
+              </div>
+              {t("bio.github") !== "" && (
+                <div className="flex flex-col items-center">
+                  <a
+                    href={t("bio.github")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="black hover:text-accent transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <FaGithub className="h-6 w-6" />
+                  </a>
+                  <span className="text-sm text-gray-600">GitHub</span>
+                </div>
               )}
               {t("bio.scholar") !== "" && (
-                <a
-                  href={t("bio.scholar")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary hover:text-accent transition-colors"
-                  aria-label="Google Scholar"
-                >
-                  <FaGoogleScholar className="h-6 w-6" />
-                </a>
+                <div className="flex flex-col items-center">
+                  <a
+                    href={t("bio.scholar")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:text-accent transition-colors"
+                    aria-label="Google Scholar"
+                  >
+                    <FaGoogleScholar className="h-6 w-6" />
+                  </a>
+                  <span className="text-sm text-gray-600">Scholar</span>
+                </div>
               )}
               {t("bio.orcid") !== "" && (
-                <a
-                  href={t("bio.orcid")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary hover:text-accent transition-colors"
-                  aria-label="ORCID"
-                >
-                  <img
-                    src="/ORCID-iD_icon_vector.svg"
-                    alt="ORCID"
-                    className="h-6 w-6"
-                  />
-                </a>
+                <div className="flex flex-col items-center">
+                  <a
+                    href={t("bio.orcid")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:text-accent transition-colors"
+                    aria-label="ORCID"
+                  >
+                    <img
+                      src="/ORCID-iD_icon_vector.svg"
+                      alt="ORCID"
+                      className="h-6 w-6"
+                    />
+                  </a>
+                  <span className="text-sm text-gray-600">ORCID</span>
+                </div>
               )}
               {t("bio.researchmap") !== "" && (
-                <a
-                  href={t("bio.researchmap")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-secondary hover:text-accent transition-colors"
-                  aria-label="Researchmap"
-                >
-                  <GiJapan className="h-6 w-6" />
-                </a>
+                <div className="flex flex-col items-center">
+                  <a
+                    href={t("bio.researchmap")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:text-accent transition-colors"
+                    aria-label="Researchmap"
+                  >
+                    <img src="/rm.png" alt="Researchmap" className="h-6 w-6" />
+                  </a>
+                  <span className="text-sm text-gray-600">Researchmap</span>
+                </div>
               )}
             </div>
 

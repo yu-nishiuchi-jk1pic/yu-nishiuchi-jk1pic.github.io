@@ -19,7 +19,7 @@
     "github": "https://github.com/yourusername",
     "scholar": "https://scholar.google.com/citations?user=your-id",
     "orcid": "https://orcid.org/0000-0000-0000-0000",
-    "researchmap": "",
+    "researchmap": "https://researchmap.jp/yourusername",
     "researchInterests": "Research Interests",
     "researchTags": [
       "Mathematics",
@@ -30,6 +30,7 @@
     "title": "Publications",
     "papers": "Papers",
     "presentations": "Presentations",
+    "misc": "Misc",
     "allYears": "All Years",
     "mainWork": "Main Work",
     "invited": "Invited",

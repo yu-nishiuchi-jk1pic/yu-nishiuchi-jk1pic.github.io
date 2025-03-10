@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Paper, Presentation } from "../types";
+import { Paper, Presentation, Misc } from "../types";
 
 const Publications: React.FC = () => {
-  const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState<"papers" | "presentations">(
-    "papers"
-  );
+  const { t, i18n } = useTranslation();
+  const [activeTab, setActiveTab] = useState<
+    "papers" | "presentations" | "misc"
+  >("papers");
   const [selectedYear, setSelectedYear] = useState<string>("");
   const [years, setYears] = useState<string[]>([]);
   const [papers, setPapers] = useState<Paper[]>([]);
   const [presentations, setPresentations] = useState<Presentation[]>([]);
+  const [misc, setMisc] = useState<Misc[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [showAll, setShowAll] = useState<boolean>(false);
   const maxItems = 5;
@@ -34,7 +35,7 @@ const Publications: React.FC = () => {
     fetchYears();
   }, []);
 
-  // 論文または発表データを取得
+  // 論文、発表、またはその他データを取得
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
@@ -44,24 +45,32 @@ const Publications: React.FC = () => {
             ? selectedYear
               ? `./api/papers-${selectedYear}.json`
               : "/api/papers.json"
+            : activeTab === "presentations"
+            ? selectedYear
+              ? `./api/presentations-${selectedYear}.json`
+              : "/api/presentations.json"
             : selectedYear
-            ? `./api/presentations-${selectedYear}.json`
-            : "/api/presentations.json";
+            ? `./api/misc-${selectedYear}.json`
+            : "/api/misc.json";
 
         const response = await fetch(endpoint);
         const data = await response.json();
 
         if (activeTab === "papers") {
           setPapers(data || []);
-        } else {
+        } else if (activeTab === "presentations") {
           setPresentations(data || []);
+        } else {
+          setMisc(data || []);
         }
       } catch (error) {
         console.error(`Failed to fetch ${activeTab}:`, error);
         if (activeTab === "papers") {
           setPapers([]);
-        } else {
+        } else if (activeTab === "presentations") {
           setPresentations([]);
+        } else {
+          setMisc([]);
         }
       } finally {
         setIsLoading(false);
@@ -72,14 +81,14 @@ const Publications: React.FC = () => {
   }, [activeTab, selectedYear]);
 
   // 表示するアイテムの制限
-  const getDisplayedItems = <T extends Paper | Presentation>(
+  const getDisplayedItems = <T extends Paper | Presentation | Misc>(
     items: T[]
   ): T[] => {
     return showAll ? items : items.slice(0, maxItems);
   };
 
   // タブが変更されたときにshowAllをリセット
-  const handleTabChange = (tab: "papers" | "presentations") => {
+  const handleTabChange = (tab: "papers" | "presentations" | "misc") => {
     setActiveTab(tab);
     setShowAll(false);
   };
@@ -114,13 +123,24 @@ const Publications: React.FC = () => {
             <button
               type="button"
               onClick={() => handleTabChange("presentations")}
-              className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
+              className={`px-4 py-2 text-sm font-medium ${
                 activeTab === "presentations"
                   ? "bg-primary text-white"
-                  : "bg-white text-gray-700 border border-gray-300 border-l-0 hover:bg-gray-50"
+                  : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
               }`}
             >
               {t("publications.presentations")}
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTabChange("misc")}
+              className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
+                activeTab === "misc"
+                  ? "bg-primary text-white"
+                  : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+              }`}
+            >
+              {t("publications.misc")}
             </button>
           </div>
         </div>
@@ -198,16 +218,20 @@ const Publications: React.FC = () => {
                               </span>
                             )}
                             <h3 className="text-lg font-semibold text-primary">
-                              {paper.title}
+                              {i18n.language == "en"
+                                ? paper.title
+                                : paper.titleJa}
                             </h3>
                           </div>
                           <p className="text-gray-700 mb-1">{paper.authors}</p>
                           <p className="text-gray-600 italic mb-2">
-                            {paper.venue}
+                            {i18n.language == "en"
+                              ? paper.journal
+                              : paper.journalJa}
                           </p>
                           <p className="text-gray-500 text-sm">
                             {paper.year}
-                            {paper.month ? `-${paper.month}` : ""}
+                            {paper.month ? `.${paper.month}` : ""}
                           </p>
                           {paper.doi && (
                             <a
@@ -239,40 +263,111 @@ const Publications: React.FC = () => {
                   {t("publications.noPapers")}
                 </p>
               )
-            ) : presentations.length > 0 ? (
+            ) : activeTab === "presentations" ? (
+              presentations.length > 0 ? (
+                <>
+                  {getDisplayedItems(presentations).map((presentation) => (
+                    <div
+                      key={presentation.id}
+                      className="p-4 bg-white border rounded-lg shadow-sm hover:shadow transition-shadow"
+                    >
+                      <div className="flex flex-col md:flex-row md:items-start gap-2">
+                        <div className="md:flex-1">
+                          <div className="flex items-start gap-2 mb-2">
+                            {presentation.isInvited && (
+                              <span className="bg-accent text-white text-xs px-2 py-1 rounded-full font-medium">
+                                {t("publications.invited")}
+                              </span>
+                            )}
+                            <h3 className="text-lg font-semibold text-primary">
+                              {i18n.language == "en"
+                                ? presentation.title
+                                : presentation.titleJa}
+                            </h3>
+                          </div>
+                          <p className="text-gray-700 mb-1">
+                            {i18n.language == "en"
+                              ? presentation.speakers
+                              : presentation.speakersJa}
+                          </p>
+                          <p className="text-gray-600 mb-1">
+                            {i18n.language == "en"
+                              ? presentation.conference
+                              : presentation.conferenceJa}
+                            {presentation.place &&
+                              i18n.language == "en" &&
+                              `, ${presentation.place}`}
+                            {presentation.place &&
+                              i18n.language == "ja" &&
+                              `, ${presentation.placeJa}`}
+                          </p>
+                          <p className="text-gray-500 text-sm">
+                            {presentation.date.replace(/-/g, ".")}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {presentations.length > maxItems && !showAll && (
+                    <div className="text-center mt-6">
+                      <button
+                        onClick={() => setShowAll(true)}
+                        className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-light transition-colors"
+                      >
+                        {t("publications.showAll")}
+                      </button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <p className="text-center text-gray-500 py-4">
+                  {t("publications.noPresentations")}
+                </p>
+              )
+            ) : misc.length > 0 ? (
               <>
-                {getDisplayedItems(presentations).map((presentation) => (
+                {getDisplayedItems(misc).map((item) => (
                   <div
-                    key={presentation.id}
+                    key={item.id}
                     className="p-4 bg-white border rounded-lg shadow-sm hover:shadow transition-shadow"
                   >
                     <div className="flex flex-col md:flex-row md:items-start gap-2">
                       <div className="md:flex-1">
                         <div className="flex items-start gap-2 mb-2">
-                          {presentation.isInvited && (
+                          {item.isMainWork && (
                             <span className="bg-accent text-white text-xs px-2 py-1 rounded-full font-medium">
-                              {t("publications.invited")}
+                              {t("publications.mainWork")}
                             </span>
                           )}
                           <h3 className="text-lg font-semibold text-primary">
-                            {presentation.title}
+                            {i18n.language == "en" ? item.title : item.titleJa}
                           </h3>
                         </div>
-                        <p className="text-gray-700 mb-1">
-                          {presentation.speakers}
-                        </p>
-                        <p className="text-gray-600 mb-1">
-                          {presentation.conference}
-                          {presentation.place && `, ${presentation.place}`}
+                        <p className="text-gray-700 mb-1">{item.authors}</p>
+                        <p className="text-gray-600 italic mb-2">
+                          {i18n.language == "en"
+                            ? item.journal
+                            : item.journalJa}
                         </p>
                         <p className="text-gray-500 text-sm">
-                          {presentation.date}
+                          {item.year}
+                          {item.month ? `.${item.month}` : ""}
                         </p>
+                        {item.doi && (
+                          <a
+                            href={`https://doi.org/${item.doi}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block mt-2 text-secondary hover:text-accent text-sm"
+                          >
+                            DOI: {item.doi}
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
                 ))}
-                {presentations.length > maxItems && !showAll && (
+                {misc.length > maxItems && !showAll && (
                   <div className="text-center mt-6">
                     <button
                       onClick={() => setShowAll(true)}
@@ -285,7 +380,7 @@ const Publications: React.FC = () => {
               </>
             ) : (
               <p className="text-center text-gray-500 py-4">
-                {t("publications.noPresentations")}
+                {t("publications.noMisc")}
               </p>
             )}
           </div>

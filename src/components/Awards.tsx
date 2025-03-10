@@ -20,8 +20,8 @@ const Awards: React.FC = () => {
       setIsLoading(true);
       try {
         // 言語に応じたJSONファイルのパス
-        const awardsPath = `./content/awards/awards_${i18n.language}.json`;
-        const grantsPath = `./content/awards/grants_${i18n.language}.json`;
+        const awardsPath = `/api/awards.json`;
+        const grantsPath = `/api/researchProjects.json`;
         const projectsPath = `./content/awards/projects_${i18n.language}.json`;
 
         // 並列でデータをフェッチ
@@ -185,10 +185,16 @@ const Awards: React.FC = () => {
                         className="p-4 bg-white rounded-lg shadow-sm"
                       >
                         <h4 className="text-lg font-medium text-primary">
-                          {award.title}
+                          {i18n.language == "en" ? award.title : award.titleJa}
                         </h4>
-                        <p className="text-gray-700">{award.awarder}</p>
-                        <p className="text-gray-500 text-sm">{award.date}</p>
+                        <p className="text-gray-700">
+                          {i18n.language == "en"
+                            ? award.awarder
+                            : award.awarderJa}
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                          {award.year}.{award.month}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -215,7 +221,10 @@ const Awards: React.FC = () => {
                         className="p-4 bg-white rounded-lg shadow-sm"
                       >
                         <h4 className="text-lg font-medium text-primary">
-                          {grant.title}
+                          {i18n.language == "en" ? grant.title : grant.titleJa}{" "}
+                          {i18n.language == "en"
+                            ? grant.subject
+                            : grant.subjectJa}
                         </h4>
                         <p className="text-gray-700">{grant.funder}</p>
                         <p className="text-gray-600">
@@ -227,14 +236,22 @@ const Awards: React.FC = () => {
                               •{" "}
                             </>
                           ) : null}
-                          {grant.period}
+                          {grant.yearFrom}.{grant.monthFrom} - {grant.yearTo}.
+                          {grant.monthTo}
                         </p>
-                        {grant.description &&
-                          grant.description.trim() !== "" && (
-                            <p className="mt-2 text-gray-600">
-                              {grant.description}
-                            </p>
-                          )}
+                        {i18n.language == "en"
+                          ? grant.description &&
+                            grant.description.trim() !== "" && (
+                              <p className="mt-2 text-gray-600">
+                                {grant.description}
+                              </p>
+                            )
+                          : grant.descriptionJa &&
+                            grant.descriptionJa.trim() !== "" && (
+                              <p className="mt-2 text-gray-600">
+                                {grant.descriptionJa}
+                              </p>
+                            )}
                       </div>
                     ))}
                   </div>

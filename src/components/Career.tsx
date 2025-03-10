@@ -74,49 +74,85 @@ const Career: React.FC = () => {
             </svg>
           </div>
         ) : (
-          <div className="relative max-w-3xl mx-auto">
-            <div className="border-l-2 border-gray-200">
-              {careerItems.map((item) => (
-                <div key={item.id} className="relative pl-8 pb-8">
-                  <div className="absolute left-0 -ml-2 mt-2">
-                    <div
-                      className={`w-4 h-4 rounded-full ${
-                        item.type === "education"
-                          ? "bg-secondary"
-                          : item.type === "work"
-                          ? "bg-accent"
-                          : "bg-primary"
-                      }`}
-                    ></div>
-                  </div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* タイムラインの中央線 */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 z-0"></div>
 
-                  <div className="text-sm text-gray-500 mb-1">
+            {/* キャリアアイテム */}
+            {careerItems.map((item, index) => (
+              <div key={item.id} className="relative z-10 mb-12 w-full">
+                {/* 中央マーカー */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-4 z-20">
+                  <div
+                    className={`w-6 h-6 rounded-full border-4 ${
+                      item.type === "education"
+                        ? "bg-secondary border-secondary-light"
+                        : item.type === "work"
+                        ? "bg-accent border-accent-light"
+                        : "bg-primary border-primary-light"
+                    }`}
+                  ></div>
+                </div>
+
+                {/* コンテンツボックス */}
+                <div
+                  className={`relative ${
+                    index % 2 === 0
+                      ? "ml-auto mr-8 text-left"
+                      : "ml-8 text-left"
+                  } w-5/12 p-4 rounded-lg shadow-md bg-white border-l-4 ${
+                    item.type === "education"
+                      ? "border-secondary"
+                      : item.type === "work"
+                      ? "border-accent"
+                      : "border-primary"
+                  }`}
+                >
+                  {/* 日付 */}
+                  <div
+                    className={`inline-block px-2 py-1 mb-2 text-sm font-bold text-white rounded-md ${
+                      item.type === "education"
+                        ? "bg-secondary"
+                        : item.type === "work"
+                        ? "bg-accent"
+                        : "bg-primary"
+                    }`}
+                  >
                     {item.startDate} - {item.endDate || t("career.present")}
                   </div>
 
-                  <h3 className="text-lg font-semibold text-primary">
+                  {/* タイトルと組織 */}
+                  <h3 className="text-lg font-semibold mb-1 text-gray-800">
                     {item.position}
                   </h3>
 
-                  <div className="flex items-center gap-1 text-gray-700 mt-1">
-                    <span>{item.organization}</span>
-                    {item.type === "education" ? (
-                      <HiOutlineAcademicCap className="h-4 w-4 text-secondary" />
-                    ) : item.type === "work" ? (
-                      <CgWorkAlt className="h-4 w-4 text-accent" />
-                    ) : (
-                      <HiOutlineComputerDesktop className="h-4 w-4 text-primary" />
-                    )}
+                  <div className="flex items-center mb-1 opacity-90 text-gray-700">
+                    <>
+                      {item.type === "education" ? (
+                        <HiOutlineAcademicCap className="ml-1 h-5 w-5 text-secondary" />
+                      ) : item.type === "work" ? (
+                        <CgWorkAlt className="ml-1 h-5 w-5 text-accent" />
+                      ) : (
+                        <HiOutlineComputerDesktop className="ml-1 h-5 w-5 text-primary" />
+                      )}
+                      <span className="ml-1">{item.organization}</span>
+                    </>
                   </div>
 
-                  <div className="text-gray-600 mt-1">{item.location}</div>
+                  {/* 場所 */}
+                  <p className="text-gray-600 text-sm italic">
+                    <span className="inline-block">📍 {item.location}</span>
+                  </p>
 
-                  {item.description && item.description.trim() !== "" && (
-                    <p className="mt-2 text-gray-600">{item.description}</p>
+                  {/* 説明文 */}
+                  {item.description && (
+                    <p className="mt-2 text-gray-600 border-t border-gray-100 pt-2">
+                      {item.description}
+                    </p>
                   )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
 
             {careerItems.length === 0 && (
               <p className="text-center text-gray-500 py-4">

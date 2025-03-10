@@ -1,8 +1,11 @@
 export interface Paper {
   id: string;
   title: string;
+  titleJa: string;
   authors: string;
-  venue: string;
+  authorsJa: string;
+  journal: string;
+  journalJa: string;
   year: string;
   month: string;
   doi: string;
@@ -12,29 +15,58 @@ export interface Paper {
 export interface Presentation {
   id: string;
   title: string;
+  titleJa: string;
   speakers: string;
+  speakersJa: string;
   conference: string;
+  conferenceJa: string;
   date: string;
   year: string;
   place: string;
+  placeJa: string;
   isInvited: boolean;
+}
+
+export interface Misc {
+  id: string;
+  title: string;
+  titleJa: string;
+  authors: string;
+  authorsJa: string;
+  journal: string;
+  journalJa: string;
+  year: string;
+  month: string;
+  doi: string;
+  isMainWork: boolean;
 }
 
 export interface Award {
   id: string;
   title: string;
+  titleJa: string;
   awarder: string;
-  date: string;
+  awarderJa: string;
+  year: string;
+  month: string;
   description?: string;
 }
 
 export interface Grant {
   id: string;
   title: string;
+  titleJa: string;
+  subject: string;
+  subjectJa: string;
   funder: string;
+  funderJa: string;
   number: string;
-  period: string;
+  yearFrom: string;
+  monthFrom: string;
+  yearTo: string;
+  monthTo: string;
   description?: string;
+  descriptionJa?: string;
 }
 
 export interface Project {
