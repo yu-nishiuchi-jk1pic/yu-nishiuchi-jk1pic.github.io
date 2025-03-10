@@ -22,7 +22,7 @@ const Awards: React.FC = () => {
         // 言語に応じたJSONファイルのパス
         const awardsPath = `/api/awards.json`;
         const grantsPath = `/api/researchProjects.json`;
-        const projectsPath = `./content/awards/projects_${i18n.language}.json`;
+        const projectsPath = `./content/etc/projects_${i18n.language}.json`;
 
         // 並列でデータをフェッチ
         const [awardsResponse, grantsResponse, projectsResponse] =
@@ -37,10 +37,9 @@ const Awards: React.FC = () => {
         const grantsData = await grantsResponse.json();
         const projectsData = await projectsResponse.json();
 
-        // 現在の順序を逆にするために配列を反転
-        setAwards([...awardsData].reverse());
-        setGrants([...grantsData].reverse());
-        setProjects([...projectsData].reverse());
+        setAwards(awardsData);
+        setGrants(grantsData);
+        setProjects(projectsData);
 
         // データが空の場合、表示可能な最初のタブをアクティブにする
         const setDefaultActiveTab = () => {

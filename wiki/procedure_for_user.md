@@ -2,6 +2,8 @@
 
 This guide explains the process of forking an academic website template, replacing it with your own information, and publishing it on GitHub Pages. All steps can be completed entirely on GitHub.
 
+> **Note**: This template is available in English and Japanese. If you do not need Japanese, please enter the Japanese field in English as well.
+
 ## Table of Contents
 
 - [Academic Website Template User Guide](#academic-website-template-user-guide)
@@ -15,15 +17,11 @@ This guide explains the process of forking an academic website template, replaci
   - [4. Configure homepage and multilingual support](#4-configure-homepage-and-multilingual-support)
     - [English bio](#english-bio)
     - [Japanese bio](#japanese-bio)
-  - [5. Edit career and award information](#5-edit-career-and-award-information)
-    - [Edit career information](#edit-career-information)
-    - [Edit awards](#edit-awards)
-    - [Edit research grants information](#edit-research-grants-information)
-    - [Edit project information](#edit-project-information)
-  - [6. Update publication information](#6-update-publication-information)
-    - [Get data from ResearchMap](#get-data-from-researchmap)
-    - [Upload CSV files](#upload-csv-files)
-    - [Directly edit existing CSV files](#directly-edit-existing-csv-files)
+  - [5. Updating Research Achievements](#5-updating-research-achievements)
+    - [Retrieving Data from Researchmap](#retrieving-data-from-researchmap)
+    - [Uploading CSV Files](#uploading-csv-files)
+    - [Directly Editing Existing CSV Files](#directly-editing-existing-csv-files)
+    - [Editing Project Information (Generally Not Required)](#editing-project-information-generally-not-required)
   - [7. Changing Profile Images and Favicon](#7-changing-profile-images-and-favicon)
     - [Changing Images](#changing-images)
   - [8. SEO Optimization Customization](#8-seo-optimization-customization)
@@ -126,15 +124,109 @@ Edit the bio markdown files.
 3. Rewrite the same content in Japanese
 4. Click the "Commit changes..." button to save changes
 
-## 5. Edit career and award information
+## 5. Updating Research Achievements
 
-Edit the JSON files for your career, awards, research projects, etc.
+Update research achievements (papers, presentations, and others), awards, and research funding information using CSV files.
 
-### Edit career information
+### Retrieving Data from Researchmap
 
-1. Open the `public/content/career/career_en.json` file
-2. Click "Edit this file"
-3. Enter your education and career information following the JSON format:
+1. Log in to Researchmap (https://researchmap.jp/).
+2. Click on the "Achievements" tab in your My Portal.
+3. In the "Papers" or "Presentations" section, click "Export" to download the CSV file.
+
+### Uploading CSV Files
+
+1. Open the `data` directory in your forked repository.
+2. Click "Add file" → "Upload files."
+3. Upload the downloaded papers CSV file as `rm_published_papers.csv`.
+4. Upload the downloaded presentations CSV file as `rm_presentations.csv`.
+5. Upload the downloaded miscellaneous (proceedings, commentary articles, etc.) CSV file as `rm_misc.csv`.
+6. Upload the downloaded awards CSV file as `rm_awards.csv`.
+7. Upload the downloaded projects CSV file as `rm_research_projects.csv`.
+8. Click the "Commit changes..." button to commit the changes.
+
+> **Note**: If the format or column names of the CSV files differ from the template's expectations, you may need to edit the `scripts/generatePublicApi.cjs` file to adjust the mapping.
+
+### Directly Editing Existing CSV Files
+
+1. Open the `data/rm_published_papers.csv` file.
+2. Click "Edit this file."
+3. Edit the paper information following the CSV format:
+   ```
+   published_papers
+   ID,タイトル(英語),タイトル(日本語),著者(英語),著者(日本語),誌名(英語),誌名(日本語),出版年月,DOI,主要な業績かどうか
+   paper-1,Your Paper Title,あなたの論文タイトル,"Author 1, Author 2","著者1, 著者2",Journal Name,ジャーナル名,2023-01,10.1234/abcd,true
+   ```
+4. Save the changes.
+5. Similarly, update `data/rm_presentations.csv`:
+   ```
+   presentations
+   ID,タイトル(英語),タイトル(日本語),講演者(英語),講演者(日本語),会議名(英語),会議名(日本語),発表年月日,開催地(英語),開催地(日本語),招待の有無
+   presentation-1,Your Presentation Title,あなたの発表タイトル,"Author 1, Author 2","著者1, 著者2",Conference Name,会議名,2023-01-01,Location,場所,false
+   ```
+6. Similarly, update `data/rm_misc.csv`:
+   ```
+   misc
+   ID,タイトル(英語),タイトル(日本語),著者(英語),著者(日本語),誌名(英語),誌名(日本語),出版年月,DOI,主要な業績かどうか
+   paper-1,Your Paper Title,あなたの論文タイトル,"Author 1, Author 2","著者1, 著者2",Journal Name,ジャーナル名,2023-01,10.1234/abcd,false
+   ```
+7. Similarly, update `data/rm_awards.csv`:
+   ```
+   awards
+   ID,賞名(日本語),賞名(英語),タイトル(日本語),タイトル(英語),授与機関(日本語),授与機関(英語),受賞年月,主要な業績かどうか
+   example-id
+8. Similarly, update `data/rm_research_projects.csv`:
+   ```
+   research_projects
+   ID,タイトル(日本語),タイトル(英語),提供機関(日本語),提供機関(英語),制度名(日本語),制度名(英語),研究種目(日本語),研究種目(英語),研究期間(From),研究期間(To),課題番号,主要な業績かどうか
+   example-id,これは説明用のレコードです,"This is an example record for explanation purposes",提供機関(例),"Funder (Example)",制度名(例),"Program Name (Example)",研究種目(例),"Research Category (Example)",2023-12,2024-12,例-課題番号,false
+   ```
+
+> **Note**: The first row will be skipped, so enter the header in the second row and records from the third row onward.
+> **Note**: Do not edit the header; only edit from the third row onward.
+> **Note**: CSV elements are generally separated by commas. For multiple authors, enclose them in `""` like `"Author1, Author2"` or `"[Author1, Author2]"`.
+> **Note**: Unnecessary fields can be left blank or set to `null` to make them not appear.
+> **Note**: The header column names are written in Japanese. Below are the English explanations for each column name:
+> - `ID`: A unique identifier for each record.
+> - `タイトル(日本語)`: Title in Japanese.
+> - `タイトル(英語)`: Title in English.
+> - `著者(日本語)`: Author names in Japanese. ("著者1, 著者2").
+> - `著者(英語)`: Author names in English. ("Author 1, Author 2").
+> - `誌名(日本語)`: Journal name in Japanese.
+> - `誌名(英語)`: Journal name in English.
+> - `出版年月`: Publication date (YYYY-MM format).
+> - `DOI`: Digital Object Identifier (DOI).
+> - `主要な業績かどうか`: Whether it is a major achievement (true/false).
+> - `講演者(日本語)`: Speaker names in Japanese. ("著者1, 著者2").
+> - `講演者(英語)`: Speaker names in English. ("Author 1, Author 2").
+> - `会議名(日本語)`: Conference name in Japanese (international conference).
+> - `会議名(英語)`: Conference name in English (international conference).
+> - `発表年月日`: Presentation date (YYYY-MM-DD format).
+> - `開催地(日本語)`: Location in Japanese.
+> - `開催地(英語)`: Location in English.
+> - `招待の有無`: Whether it was an invited presentation (true/false).
+> - `賞名(日本語)`: Award name in Japanese.
+> - `賞名(英語)`: Award name in English.
+> - `授与機関(日本語)`: Awarding institution in Japanese.
+> - `授与機関(英語)`: Awarding institution in English.
+> - `受賞年月`: Award date (YYYY-MM format).
+> - `制度名(日本語)`: Program name in Japanese.
+> - `制度名(英語)`: Program name in English.
+> - `研究種目(日本語)`: Research category in Japanese.
+> - `研究種目(英語)`: Research category in English.
+> - `研究期間(From)`: Research start date (YYYY-MM-DD format).
+> - `研究期間(To)`: Research end date (YYYY-MM-DD format).
+> - `課題番号`: Research project number.
+
+## 6. Editing Career Information
+
+Edit the career JSON files.
+
+### Editing Career Information
+
+1. Open the `public/content/career/career_en.json` file.
+2. Click "Edit this file."
+3. Enter your academic and professional history following the JSON format:
    ```json
    [
      {
@@ -143,78 +235,21 @@ Edit the JSON files for your career, awards, research projects, etc.
        "organization": "Your Organization",
        "location": "Location",
        "startDate": "2020",
-       "endDate": null,  // null for current position
+       "endDate": null,  // Use null for current positions
        "description": "Description of your role",
        "type": "work"    // "work" or "education"
      },
-     // other career items...
+     // Other career entries...
    ]
    ```
-4. Click "Commit changes..." to save
-5. Similarly update `public/content/career/career_ja.json` with Japanese information
+4. Click "Commit changes..." to save.
+5. Similarly, update `public/content/career/career_ja.json` with Japanese information.
 
-> **Note**: Keep the `"id"` consistent between Japanese and English. The order of entries doesn't matter.
+> **Note**: Ensure `"id"` is consistent between Japanese and English files. The order of entries does not matter.
 
-### Edit awards
+### Editing Project Information (Generally Not Required)
 
-1. Open the `public/content/awards/awards_en.json` file
-2. Enter your award information:
-   ```json
-   [
-     {
-       "id": "award-1",
-       "title": "Award Name",
-       "awarder": "Awarding Organization",
-       "date": "2023-06",
-       "description": "Description of the award"
-     },
-     // other awards...
-   ]
-   ```
-3. Save the changes
-4. Similarly update `public/content/awards/awards_ja.json` with Japanese information
-
-> **Note**: Keep the `"id"` consistent between Japanese and English. The order of entries doesn't matter.
-
-> **Tip**: If you don't have any applicable items, enter an empty JSON:
-```json
-   [
-     // don't write anything here
-   ]
-```
-
-### Edit research grants information
-
-1. Open the `public/content/awards/grants_en.json` file
-2. Enter your research grant information:
-   ```json
-   [
-     {
-       "id": "grant-1",
-       "title": "Fellowship",
-       "funder": "Agency",
-       "number": "Grant No",
-       "period": "2023-2025",
-       "description": "Project 1"
-     },
-     // other grant items...
-   ]
-   ```
-3. Save the changes
-4. Similarly update `public/content/awards/grants_ja.json` with Japanese information
-
-> **Note**: Keep the `"id"` consistent between Japanese and English. The order of entries doesn't matter.
-
-> **Tip**: If you don't have any applicable items, enter an empty JSON:
-```json
-   [
-     // don't write anything here
-   ]
-```
-
-### Edit project information
-
-1. Open the `public/content/awards/projects_en.json` file
+1. Open the `public/content/etc/projects_en.json` file.
 2. Enter your project information:
    ```json
    [
@@ -226,60 +261,15 @@ Edit the JSON files for your career, awards, research projects, etc.
        "languages": ["Language1", "Language2"],
        "languageColors": ["#color1", "#color2"]
      },
-     // other project items...
+     // Other project entries...
    ]
    ```
-3. Save the changes
-4. Similarly update `public/content/awards/projects_ja.json` with Japanese information
+3. Save the changes.
+4. Similarly, update `public/content/etc/projects_ja.json` with Japanese information.
 
-> **Note**: Keep the `"id"` consistent between Japanese and English. The order of entries doesn't matter.
+> **Note**: Ensure `"id"` is consistent between Japanese and English files. The order of entries does not matter.
 
-> **Tip**: If you don't have any applicable items, enter an empty JSON:
-```json
-   [
-     // don't write anything here
-   ]
-```
-
-## 6. Update publication information
-
-Update your research publication information (papers and presentations) using CSV files.
-
-### Get data from ResearchMap
-
-1. Log in to ResearchMap (https://researchmap.jp/)
-2. Click the "Achievements" tab in your portal
-3. Click "Export" in the "Papers" or "Presentations" section to download CSV files
-
-### Upload CSV files
-
-1. Open the `data` directory in your forked repository
-2. Click "Add file" → "Upload files"
-3. Upload the downloaded papers CSV file as `rm_published_papers.csv`
-4. Upload the downloaded presentations CSV file as `rm_presentations.csv`
-5. Click the "Commit changes..." button to commit the changes
-
-> **Note**: If the CSV file format or column names differ from the template's expectations, you may need to edit the `scripts/generatePublicApi.cjs` file to adjust the mapping.
-
-### Directly edit existing CSV files
-
-1. Open the `data/rm_published_papers.csv` file
-2. Click "Edit this file"
-3. Edit the paper information following the CSV format:
-   ```
-   published_papers
-   ID,Title(English),Title(Japanese),Authors(English),Authors(Japanese),Journal(English),Journal(Japanese),Publication Date,DOI,Is Major Achievement
-   paper-1,Your Paper Title,あなたの論文タイトル,"Author 1, Author 2","著者1, 著者2",Journal Name,ジャーナル名,2023-01,10.1234/abcd,true
-   ```
-4. Save the changes
-5. Similarly update `data/rm_presentations.csv`:
-   ```
-   presentations
-   ID,Title(English),Title(Japanese),Presenters(English),Presenters(Japanese),Conference(English),Conference(Japanese),Presentation Date,Location(English),Location(Japanese),Invited
-   presentation-1,Your Presentation Title,あなたの発表タイトル,"Author 1, Author 2","著者1, 著者2",Conference Name,会議名,2023-01-01,Location,場所,false
-   ```
-
-> **Note**: The first line is skipped, so put the header on the second line and records from the third line onward.
+> **Tip**: If there are no applicable items, leave the JSON file empty but keep the file:
 
 ## 7. Changing Profile Images and Favicon
 
