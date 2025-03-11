@@ -53,7 +53,8 @@ Change the basic settings of your forked repository.
 
 1. Click the "Settings" tab on the page of the forked repository.
 2. Find the "GitHub Pages" section in the left-hand menu.
-3. Select "GitHub Actions" as the source (to use the deployment workflow).
+3. Select "Deploy from a branch" as the source (to use the deployment workflow).  
+   Set the branch as `gh-pages` and `/(root)`.
 
 > **Note**: If there is no deployment workflow, you will set it up in a later step.
 
@@ -330,7 +331,8 @@ Publish your site on GitHub Pages.
      c. If not, create a new one and copy the content from the same file in the template repository
 4. After the workflow succeeds, check the published URL in "Settings" → "Pages"
 
-> **Tip**: The initial deployment may take a few minutes. Please be patient.
+> **Tip**: The initial deployment may take a few minutes. Please be patient.  
+> **Tip**: To check your revision in your page, please use the shortcut `ctrl` + `shift` + `R`.  
 
 ### Re-run the deployment workflow
 If needed, re-run the workflow with these steps:
