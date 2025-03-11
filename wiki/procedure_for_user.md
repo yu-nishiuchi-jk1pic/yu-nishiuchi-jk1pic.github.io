@@ -42,25 +42,25 @@ First, fork the template repository to your GitHub account.
 
 1. Go to the template repository page (https://github.com/sigma-users/personal-website-template)
 2. Click the "Fork" button in the top right
-3. Change the repository name if needed (e.g., `yourusername.github.io`)
+3. The repository name must be changed to your user name (`yourusername.github.io`)
 4. Click the "Create Fork" button to complete the process
 
-> **Tip**: If you want to publish it as a user site, naming the repository `yourgithubusername.github.io` is recommended.
+> **Tip**: If you want to publish it as a user site, you must name the repository `yourgithubusername.github.io` .
 
 ## 2. Change repository settings
 
 Change the basic settings of your forked repository.
 
 1. Click the "Settings" tab on the page of the forked repository.
-2. From the left menu, click "Code and automation" → "Pages (GitHub Pages)".
-3. In the "Source" section, select "GitHub Actions" (to use the deployment workflow).
+2. Find the "GitHub Pages" section in the left-hand menu.
+3. Select "GitHub Actions" as the source (to use the deployment workflow).
 
 > **Note**: If there is no deployment workflow, you will set it up in a later step.
 
 ### 1. Grant write permissions to GitHub Actions
 First, set permissions to allow the deployment workflow to write to the gh-pages branch:
 
-1. Click the "Settings" tab on the page of the forked repository (same as ##2.1).
+1. Click the "Settings" tab on your repository page
 2. From the left menu, click "Actions" → "General"
 3. Scroll to the "Workflow permissions" section
 4. Select the "Read and write permissions" option
@@ -72,8 +72,8 @@ Edit the multilingual configuration files to update your profile information.
 
 ### Edit English configuration file
 
-1. In your forked repository, open the "Code" → `public/locales/en/translations.json` file
-2. Click "Edit this file" (the pencil icon) in the right top.
+1. In your forked repository, open the `public/locales/en/translations.json` file
+2. Click "Edit this file" (the pencil icon)
 3. Replace the following sections with your information:
    - `header.name`: Name displayed in the header
    - `bio.name`: English name
@@ -89,9 +89,8 @@ Edit the multilingual configuration files to update your profile information.
    - `contact.phoneNumber`: Phone number
    - `contact.addressLine1`, `contact.addressLine2`, `contact.addressLine3`: Address lines
    - `contact.linkedin`, `contact.facebook`, `contact.twitter`: Social media links (set to `""` if not)
-4. Click the green "Commit changes..." button to save changes
-5. Enter a commit message (e.g., "Update English profile information") and click "Commit changes"  
-   (Choose Commit directrly to the `main` branch)  
+4. Click the "Commit changes..." button to save changes
+5. Enter a commit message (e.g., "Update English profile information") and click "Commit changes"
 
 > **Tip**: For unnecessary items, set an empty string `""` or enter `null`.
 > **Tip**: If you want to remove the social media links at the bottom of the page, set `contact.socialMedia` to `""`.
@@ -306,7 +305,7 @@ Change the URL to your GitHub Pages URL.
 
 Customize the SEO and Google Search Console information in the index.html file.
 
-1. Open the `index.html` file in the home directory of your forked repository
+1. Open the `public/index.html` file in your forked repository
 2. Replace the following information with your GitHub username or full name:
    - Change the content inside the `<title>` tag to your name
    - Edit the `content` attribute of `<meta name="description">` to match your research
@@ -318,18 +317,18 @@ Customize the SEO and Google Search Console information in the index.html file.
 > **Tip**: Proper SEO configuration improves how your site appears in search engines.
 
 ## 9. Publish on GitHub Pages
-
+After a "push" action, the GitHub page is generated.  
 Publish your site on GitHub Pages.
 
-1. Click the "Actions" tab in your forked repository
-   (In the first time, click the green button "I understand my workflows, go ahead and enable them")
-2. Find and select the "Deploy to GitHub Pages" workflow in the left menu.
+1. Perform a "push" in arbitrary page (ex. edit and add space in `/content/bio/bio_en.md`, and "Commit changes...").  
+2. Click the "Actions" tab in your forked repository
+3. Find and select the "Deploy to GitHub Pages" workflow
    - If the workflow is already running or completed, check its results
    - If you cannot find the workflow, create the workflow file with these steps:
      a. Open the ".github/workflows" directory
      b. Check if there is a "deploy.yml" file
      c. If not, create a new one and copy the content from the same file in the template repository
-3. After the workflow succeeds, check the published URL in "Settings" → "Pages"
+4. After the workflow succeeds, check the published URL in "Settings" → "Pages"
 
 > **Tip**: The initial deployment may take a few minutes. Please be patient.
 
