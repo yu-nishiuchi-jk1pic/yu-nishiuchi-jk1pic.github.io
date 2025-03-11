@@ -8,6 +8,7 @@ This guide explains the process of forking an academic website template, replaci
 
 - [Academic Website Template User Guide](#academic-website-template-user-guide)
   - [Table of Contents](#table-of-contents)
+  - [0. Overview](#0-overview)
   - [1. Fork the repository on GitHub](#1-fork-the-repository-on-github)
   - [2. Change repository settings](#2-change-repository-settings)
     - [1. Grant write permissions to GitHub Actions](#1-grant-write-permissions-to-github-actions)
@@ -35,6 +36,12 @@ This guide explains the process of forking an academic website template, replaci
     - [Build errors](#build-errors)
     - [Other issues](#other-issues)
   - [Extended Customization](#extended-customization)
+
+## 0. Overview
+
+- Step 1-2: Fork the repository to your own GitHub account and make the basic settings.
+- Step 3-7: Write your information.
+- Step 8-9: Publish on GitHub pages using the script.
 
 ## 1. Fork the repository on GitHub
 
