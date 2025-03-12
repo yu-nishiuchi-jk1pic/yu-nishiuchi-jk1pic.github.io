@@ -348,6 +348,7 @@ Publish your site on GitHub Pages.
      c. If not, create a new one and copy the content from the same file in the template repository
 4. After the workflow succeeds, check the published URL in "Settings" → "Pages"
 
+> **Tip**: **It may take several minutes for your changes to appear on the page.**  Please be patient.  
 > **Tip**: The initial deployment may take a few minutes. Please be patient.  
 > **Tip**: To check your revision in your page, please use the shortcut `ctrl` + `shift` + `R`.  
 
