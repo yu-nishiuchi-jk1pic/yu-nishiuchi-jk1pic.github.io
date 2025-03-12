@@ -47,18 +47,21 @@ This guide explains the process of forking an academic website template, replaci
 
 First, fork the template repository to your GitHub account.
 
+> **Note**: **Fork** means copying the parent repository in sigma-users to your GitHub account.
+> **Note**: **Repositoty** means the place to store your code. It is similar to the folder or directory.
+
 1. Go to the template repository page (https://github.com/sigma-users/personal-website-template)
 2. Click the "Fork" button in the top right
 3. The repository name must be changed to your user name (`yourusername.github.io`)
 4. Click the "Create Fork" button to complete the process
 
-> **Tip**: If you want to publish it as a user site, you must name the repository `yourgithubusername.github.io` .
+> **Tip**: You must name the repository `yourgithubusername.github.io` .
 
 ## 2. Change repository settings
 
 Change the basic settings of your forked repository.
 
-1. Click the "Settings" tab on the page of the forked repository.
+1. Click the "Settings" tab on the page of the forked repository in your GitHub account.
 2. Find the "GitHub Pages" section in the left-hand menu.
 3. Select "Deploy from a branch" as the source (to use the deployment workflow).  
    Set the branch as `gh-pages` and `/(root)`.
@@ -66,7 +69,7 @@ Change the basic settings of your forked repository.
 > **Note**: If there is no deployment workflow, you will set it up in a later step.
 
 ### 1. Grant write permissions to GitHub Actions
-First, set permissions to allow the deployment workflow to write to the gh-pages branch:
+Set permissions to allow the deployment workflow to write to the gh-pages branch:
 
 1. Click the "Settings" tab on your repository page
 2. From the left menu, click "Actions" → "General"
@@ -75,7 +78,7 @@ First, set permissions to allow the deployment workflow to write to the gh-pages
 5. Click the "Save" button to save the changes
 
 ## 3. Edit profile information
-
+From step 3 to 7, you can write your personal information one by one.
 Edit the multilingual configuration files to update your profile information.
 
 ### Edit English configuration file
@@ -97,11 +100,17 @@ Edit the multilingual configuration files to update your profile information.
    - `contact.phoneNumber`: Phone number
    - `contact.addressLine1`, `contact.addressLine2`, `contact.addressLine3`: Address lines
    - `contact.linkedin`, `contact.facebook`, `contact.twitter`: Social media links (set to `""` if not)
+
+> **Tip**: For unnecessary items, set an empty string `""` or enter `null`.  
+> **Tip**: If you want to remove the social media links at the bottom of the page, set `contact.socialMedia` to `""`.
+
 4. Click the "Commit changes..." button to save changes
+
+> **Note**: **Commit** means to save the changes. 
+
 5. Enter a commit message (e.g., "Update English profile information") and click "Commit changes"
 
-> **Tip**: For unnecessary items, set an empty string `""` or enter `null`.
-> **Tip**: If you want to remove the social media links at the bottom of the page, set `contact.socialMedia` to `""`.
+> **Tip**: It is **not** recommended to write empty or meaningless commit messages, because it makes it difficult to understand what you did afterwards.  
 
 ### Edit Japanese configuration file
 
@@ -112,7 +121,7 @@ Edit the multilingual configuration files to update your profile information.
 
 ## 4. Configure homepage and multilingual support
 
-Edit the bio markdown files.
+Edit the bio (biography) markdown files.
 
 ### English bio
 
@@ -122,6 +131,7 @@ Edit the bio markdown files.
    - Use headings (`##`) to structure your content
    - Describe your research, career highlights, specialties, etc.
    - Utilize bullet points (`-`) as needed
+   - You can use 'Preview' button to check the format.
 4. Click the "Commit changes..." button to save changes
 > **Tip**: By default, GitHub and ORCID are displayed as icons. If you prefer to display them as text, set `bio.github`, `bio.orcid`, etc., to `""` and include them in this markdown file as `- GitHub: [https://github.com](https://github.com)`. Refer to the examples in this template for guidance.
 
