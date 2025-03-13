@@ -20,6 +20,7 @@
     "scholar": "https://scholar.google.com/citations?user=your-id",
     "orcid": "https://orcid.org/0000-0000-0000-0000",
     "researchmap": "https://researchmap.jp/yourusername",
+    "linkedin": "https://www.linkedin.com/in/yourusername/",
     "researchInterests": "Research Interests",
     "researchTags": [
       "Mathematics",
@@ -66,7 +67,7 @@
     "addressLine1": "Electron Microscopy and Materials Science Laboratory",
     "addressLine2": "The University of Tokyo",
     "addressLine3": "Room 419, Faculty of Engineering Bldg. 9, 2-11-16 Yayoi, Bunkyo-ku, Tokyo 113-0032, Japan",
-    "socialMedia": "Social Media",
+    "socialMedia": "",
     "linkedin": "",
     "facebook": "",
     "twitter": "",

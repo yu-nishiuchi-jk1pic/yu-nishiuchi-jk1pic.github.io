@@ -19,7 +19,8 @@
     "github": "https://github.com/yourusername",
     "scholar": "https://scholar.google.com/citations?user=your-id",
     "orcid": "https://orcid.org/0000-0000-0000-0000",
-    "researchmap": "",
+    "researchmap": "https://researchmap.jp/yourusername",
+    "linkedin": "https://www.linkedin.com/in/yourusername/",
     "researchInterests": "研究興味",
     "researchTags": [
       "数学",
@@ -66,7 +67,7 @@
     "addressLine1": "電子顕微鏡材料学研究室",
     "addressLine2": "東京大学",
     "addressLine3": "〒113-0032 東京都文京区弥生2-11-16東京大学工学部9号館4F419号室",
-    "socialMedia": "ソーシャルメディア",
+    "socialMedia": "",
     "linkedin": "",
     "facebook": "",
     "twitter": "",
