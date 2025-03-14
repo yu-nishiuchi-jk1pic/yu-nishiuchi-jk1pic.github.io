@@ -42,10 +42,10 @@
 
 1. テンプレートリポジトリのページ（ https://github.com/sigma-users/personal-website-template ）にアクセスします
 2. 右上の「Fork」ボタンをクリックします
-3. 必要に応じてリポジトリ名を変更します（例：`yourusername.github.io`）
+3. 例：`あなたのGithubユーザー名.github.io`のようにリポジトリ名を変更します。
 4. 「Create Fork」ボタンをクリックしてフォークを完了します
 
-> **ヒント**: ユーザーサイトとして公開する場合は、リポジトリ名を `あなたのGitHubユーザー名.github.io` にすると良いでしょう。
+> **注意**: リポジトリ名を `あなたのGitHubユーザー名.github.io` 以外にすると正常に動作しません。
 
 ## 2. リポジトリ設定の変更
 
