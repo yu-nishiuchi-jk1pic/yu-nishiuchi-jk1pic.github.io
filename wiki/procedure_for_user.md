@@ -4,11 +4,16 @@ This guide explains the process of forking an academic website template, replaci
 
 > **Note**: This template is available in English and Japanese. If you do not need Japanese, please enter the Japanese field in English as well.
 
+- Step 1-2: Fork the repository to your own GitHub account and make the basic settings.
+- Step 3-7: Write your information.
+- Step 8-9: Publish on GitHub pages using the script.
+
 ## Table of Contents
 
 - [Academic Website Template User Guide](#academic-website-template-user-guide)
   - [Table of Contents](#table-of-contents)
-  - [0. Overview](#0-overview)
+  - [0. advance preparation](#0-Advance Preparation)
+    - 1. create GitHub account](#1-create github account)
   - [1. Fork the repository on GitHub](#1-fork-the-repository-on-github)
   - [2. Change repository settings](#2-change-repository-settings)
     - [1. Grant write permissions to GitHub Actions](#1-grant-write-permissions-to-github-actions)
@@ -37,11 +42,15 @@ This guide explains the process of forking an academic website template, replaci
     - [Other issues](#other-issues)
   - [Extended Customization](#extended-customization)
 
-## 0. Overview
+## 0. Preliminary Preparation
 
-- Step 1-2: Fork the repository to your own GitHub account and make the basic settings.
-- Step 3-7: Write your information.
-- Step 8-9: Publish on GitHub pages using the script.
+Please do any prerequisite work that is not already done as required.
+
+### 1. create a GitHub account
+
+- Go to the official GitHub website [https://github.com/](https://github.com/).
+- Click the "Sign up" button in the upper right corner.
+- Username: Enter your name for your activity on GitHub.A name that is friendly and describes you is good.Basically, the domain of this personal page is [https://username.github.io/](https://username.github.io/), so we recommend an account name that relates to your name, such as `firstname-lastname`.
 
 ## 1. Fork the repository on GitHub
 
@@ -78,6 +87,7 @@ Set permissions to allow the deployment workflow to write to the gh-pages branch
 5. Click the "Save" button to save the changes
 
 ## 3. Edit profile information
+
 From step 3 to 7, you can write your personal information one by one.
 Edit the multilingual configuration files to update your profile information.
 
@@ -119,6 +129,8 @@ Edit the multilingual configuration files to update your profile information.
 3. Replace the same sections with your Japanese information
 4. Click the "Commit changes..." button to save changes
 
+> **Note**: This template is available in English and Japanese. If you do not need Japanese, please enter the Japanese field in English as well.
+
 ## 4. Configure homepage and multilingual support
 
 Edit the bio (biography) markdown files.
@@ -133,6 +145,7 @@ Edit the bio (biography) markdown files.
    - Utilize bullet points (`-`) as needed
    - You can use 'Preview' button to check the format.
 4. Click the "Commit changes..." button to save changes
+
 > **Tip**: By default, GitHub and ORCID are displayed as icons. If you prefer to display them as text, set `bio.github`, `bio.orcid`, etc., to `""` and include them in this markdown file as `- GitHub: [https://github.com](https://github.com)`. Refer to the examples in this template for guidance.
 
 ### Japanese bio
@@ -144,7 +157,7 @@ Edit the bio (biography) markdown files.
 
 ## 5. Updating Research Achievements
 
-Update research achievements (papers, presentations, and others), awards, and research funding information using CSV files.
+Update research achievements (papers, presentations, and others), awards, and research funding information using CSV files. 
 
 ### Retrieving Data from Researchmap
 
@@ -264,8 +277,13 @@ Edit the career JSON files.
 5. Similarly, update `public/content/career/career_ja.json` with Japanese information.
 
 > **Note**: Ensure `"id"` is consistent between Japanese and English files. The order of entries does not matter.
+> **Note**: Strings must be enclosed in double quotation marks. Single quotation marks are not allowed.
+> **NOTE**: Be careful not to put a comma after the last element .Doing so will result in a parsing error.
+> **NOTE**: Comments are not officially allowed in JSON files .Instead, you must write your comments in a separate document or program.
 
 ### Editing Project Information (Generally Not Required)
+
+Edit any non-Grant projects; Grant should be edited in `rm_research_projects.csv`. By default, this field is not displayed.
 
 1. Open the `public/content/etc/projects_en.json` file.
 2. Enter your project information:
@@ -288,6 +306,10 @@ Edit the career JSON files.
 > **Note**: Ensure `"id"` is consistent between Japanese and English files. The order of entries does not matter.
 
 > **Tip**: If there are no applicable items, leave the JSON file empty but keep the file:
+```json
+   [
+   ]
+```
 
 ## 7. Changing Profile Images and Favicon
 
@@ -335,22 +357,21 @@ Customize the SEO and Google Search Console information in the index.html file.
 > **Tip**: Proper SEO configuration improves how your site appears in search engines.
 
 ## 9. Publish on GitHub Pages
-After a "push" action, the GitHub page is generated.  
+
+After a "push/commit" action, the GitHub page is generated.  
 Publish your site on GitHub Pages.
 
 1. Perform a "push" in arbitrary page (ex. edit and add space in `/content/bio/bio_en.md`, and "Commit changes...").  
 2. Click the "Actions" tab in your forked repository
 3. Find and select the "Deploy to GitHub Pages" workflow
    - If the workflow is already running or completed, check its results
-   - If you cannot find the workflow, create the workflow file with these steps:
-     a. Open the ".github/workflows" directory
-     b. Check if there is a "deploy.yml" file
-     c. If not, create a new one and copy the content from the same file in the template repository
+   - When the "pages build and deployment" is executed and the green icon is complete, you are done
 4. After the workflow succeeds, check the published URL in "Settings" → "Pages"
 
 > **Tip**: **It may take several minutes for your changes to appear on the page.**  Please be patient.  
 > **Tip**: The initial deployment may take a few minutes. Please be patient.  
-> **Tip**: To check your revision in your page, please use the shortcut `ctrl` + `shift` + `R`.  
+> **Tip**: To check your revision in your page, please use the shortcut `ctrl` + `shift` + `R`.
+> **Tip**: After the second time, it may take some time after completion before it is reflected on the page.
 
 ### Re-run the deployment workflow
 If needed, re-run the workflow with these steps:
@@ -363,6 +384,12 @@ If needed, re-run the workflow with these steps:
 ## 10. Troubleshooting
 
 Here are some solutions for common issues.
+
+### domain problem
+- **Symptom**: Photos, etc. are not displaying
+- **Solution**: 1.
+  1. check the URL of the page and make sure it is [https://username.github.io](https://username.github.io)
+  If it is not (e.g. [https://username.github.io/personal-website-template] with an extraIf not, change the repository name to `username.github.io`.
 
 ### API data generation issues
 
