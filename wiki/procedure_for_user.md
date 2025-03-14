@@ -111,7 +111,8 @@ Edit the multilingual configuration files to update your profile information.
    - `contact.addressLine1`, `contact.addressLine2`, `contact.addressLine3`: Address lines
    - `contact.linkedin`, `contact.facebook`, `contact.twitter`: Social media links (set to `""` if not)
 
-> **Tip**: For unnecessary items, set an empty string `""` or enter `null`.  
+> **Tip**: For unnecessary items, set an empty string `""` or enter `null`.
+
 > **Tip**: If you want to remove the social media links at the bottom of the page, set `contact.socialMedia` to `""`.
 
 4. Click the "Commit changes..." button to save changes
@@ -214,9 +215,13 @@ Update research achievements (papers, presentations, and others), awards, and re
    ```
 
 > **Note**: The first row will be skipped, so enter the header in the second row and records from the third row onward.
+
 > **Note**: Do not edit the header; only edit from the third row onward.
+
 > **Note**: CSV elements are generally separated by commas. For multiple authors, enclose them in `""` like `"Author1, Author2"` or `"[Author1, Author2]"`.
+
 > **Note**: Unnecessary fields can be left blank or set to `null` to make them not appear.
+
 > **Note**: The header column names are written in Japanese. Below are the English explanations for each column name:
 > - `ID`: A unique identifier for each record.
 > - `タイトル(日本語)`: Title in Japanese.
@@ -277,8 +282,11 @@ Edit the career JSON files.
 5. Similarly, update `public/content/career/career_ja.json` with Japanese information.
 
 > **Note**: Ensure `"id"` is consistent between Japanese and English files. The order of entries does not matter.
+
 > **Note**: Strings must be enclosed in double quotation marks. Single quotation marks are not allowed.
+
 > **NOTE**: Be careful not to put a comma after the last element .Doing so will result in a parsing error.
+
 > **NOTE**: Comments are not officially allowed in JSON files .Instead, you must write your comments in a separate document or program.
 
 ### Editing Project Information (Generally Not Required)
@@ -368,9 +376,12 @@ Publish your site on GitHub Pages.
    - When the "pages build and deployment" is executed and the green icon is complete, you are done
 4. After the workflow succeeds, check the published URL in "Settings" → "Pages"
 
-> **Tip**: **It may take several minutes for your changes to appear on the page.**  Please be patient.  
-> **Tip**: The initial deployment may take a few minutes. Please be patient.  
+> **Tip**: **It may take several minutes for your changes to appear on the page.**  Please be patient.
+
+> **Tip**: The initial deployment may take a few minutes. Please be patient.
+
 > **Tip**: To check your revision in your page, please use the shortcut `ctrl` + `shift` + `R`.
+
 > **Tip**: After the second time, it may take some time after completion before it is reflected on the page.
 
 ### Re-run the deployment workflow
