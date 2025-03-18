@@ -12,11 +12,10 @@ This guide explains the process of forking an academic website template, replaci
 
 - [Academic Website Template User Guide](#academic-website-template-user-guide)
   - [Table of Contents](#table-of-contents)
-  - [0. advance preparation](#0-Advance Preparation)
-    - 1. create GitHub account](#1-create github account)
+  - [0. Preliminary Preparation](#0-preliminary-preparation)
+    - [1. create a GitHub account](#1-create-a-github-account)
   - [1. Fork the repository on GitHub](#1-fork-the-repository-on-github)
-  - [2. Change repository settings](#2-change-repository-settings)
-    - [1. Grant write permissions to GitHub Actions](#1-grant-write-permissions-to-github-actions)
+  - [2. Grant write permissions to GitHub Actions](#2-grant-write-permissions-to-github-actions)
   - [3. Edit profile information](#3-edit-profile-information)
     - [Edit English configuration file](#edit-english-configuration-file)
     - [Edit Japanese configuration file](#edit-japanese-configuration-file)
@@ -34,8 +33,11 @@ This guide explains the process of forking an academic website template, replaci
     - [Generating sitemap.xml and robots.txt](#generating-sitemapxml-and-robotstxt)
     - [Editing index.html](#editing-indexhtml)
   - [9. Publish on GitHub Pages](#9-publish-on-github-pages)
-    - [Re-run the deployment workflow](#re-run-the-deployment-workflow)
+    - [1. Change repository settings](#1-change-repository-settings)
+    - [2. Deploy github pages](#2-deploy-github-pages)
+    - [3. Re-run the deployment workflow](#3-re-run-the-deployment-workflow)
   - [10. Troubleshooting](#10-troubleshooting)
+    - [domain problem](#domain-problem)
     - [API data generation issues](#api-data-generation-issues)
     - [Multilingual switching issues](#multilingual-switching-issues)
     - [Build errors](#build-errors)
@@ -66,18 +68,7 @@ First, fork the template repository to your GitHub account.
 
 > **Tip**: You must name the repository `yourgithubusername.github.io` .
 
-## 2. Change repository settings
-
-Change the basic settings of your forked repository.
-
-1. Click the "Settings" tab on the page of the forked repository in your GitHub account.
-2. Find the "GitHub Pages" section in the left-hand menu.
-3. Select "Deploy from a branch" as the source (to use the deployment workflow).  
-   Set the branch as `gh-pages` and `/(root)`.
-
-> **Note**: If there is no deployment workflow, you will set it up in a later step.
-
-### 1. Grant write permissions to GitHub Actions
+## 2. Grant write permissions to GitHub Actions
 Set permissions to allow the deployment workflow to write to the gh-pages branch:
 
 1. Click the "Settings" tab on your repository page
@@ -366,6 +357,19 @@ Customize the SEO and Google Search Console information in the index.html file.
 
 ## 9. Publish on GitHub Pages
 
+### 1. Change repository settings
+
+Change the basic settings of your forked repository.
+
+1. Click the "Settings" tab on the page of the forked repository in your GitHub account.
+2. Find the "GitHub Pages" section in the left-hand menu.
+3. Select "Deploy from a branch" as the source (to use the deployment workflow).  
+   Set the branch as `gh-pages` and `/(root)`.
+
+> **Note**: If there is no deployment workflow, you will set it up in a later step.
+
+### 2. Deploy github pages
+
 After a "push/commit" action, the GitHub page is generated.  
 Publish your site on GitHub Pages.
 
@@ -384,7 +388,7 @@ Publish your site on GitHub Pages.
 
 > **Tip**: After the second time, it may take some time after completion before it is reflected on the page.
 
-### Re-run the deployment workflow
+### 3. Re-run the deployment workflow
 If needed, re-run the workflow with these steps:
 
 1. Click the "Actions" tab on your repository page
