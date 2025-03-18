@@ -69,6 +69,12 @@ First, fork the template repository to your GitHub account.
 > **Tip**: You must name the repository `yourgithubusername.github.io` .
 
 ## 2. Grant write permissions to GitHub Actions
+
+First, set up the page to build automatically
+
+1. click on the "Actions" tab on the page of the repository you forked
+2. click on "I understand my workflows, go ahead and enable them
+
 Set permissions to allow the deployment workflow to write to the gh-pages branch:
 
 1. Click the "Settings" tab on your repository page
