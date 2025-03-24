@@ -368,7 +368,7 @@ index.htmlファイル内のSEOやGoogle Search Consoleの情報をカスタマ�
 1. GitHubアカウントでフォークしたリポジトリのページにある「設定」タブをクリックします。
 2. 左側のメニューから "GitHub Pages "セクションを見つける。
 3. ソースとして "Deploy from a branch "を選択する（デプロイのワークフローを使用するため）。
-   ブランチを `gh-pages` と `/(root)` に設定する。
+   ブランチを `gh-pages` と `/(root)` に設定し、"Save"をクリックする。
 
 > **注意**: もしデプロイワークフローがない場合は、後の手順でセットアップします。
 
@@ -377,7 +377,8 @@ index.htmlファイル内のSEOやGoogle Search Consoleの情報をカスタマ�
 push/commitアクションがトリガーとなって、GitHubページが生成が開始します。
 GitHub Pages でサイトを公開しましょう。
 
-1. 任意のページで"push"を実行する（例：`/content/bio/bio_ja.md`を編集してスペースを追加し、"Commit changes..."）。
+1. 任意の一つのページで空の"push"を実行する（例：`/content/bio/bio_ja.md`を編集してスペースを追加し、"Commit changes..."）。
+> **ヒント**：何らかの"push"によりページが更新されます。最初はこのように空の"push"を行っておくとよいです。  
 2. フォークしたリポジトリの「Actions」タブをクリックします
 3. 「Deploy to GitHub Pages」ワークフローを見つけて選択します
    - すでにワークフローが実行中または完了している場合は、その結果を確認します
