@@ -52,13 +52,13 @@ Please do any prerequisite work that is not already done as required.
 
 - Go to the official GitHub website [https://github.com/](https://github.com/).
 - Click the "Sign up" button in the upper right corner.
-- Username: Enter your name for your activity on GitHub.A name that is friendly and describes you is good.Basically, the domain of this personal page is [https://username.github.io/](https://username.github.io/), so we recommend an account name that relates to your name, such as `firstname-lastname`.
+- Username: Enter your name for your activity on GitHub. A name that is friendly and describes you is good. Basically, the domain of this personal page is [https://username.github.io/](https://username.github.io/), so we recommend an account name that relates to your name, such as `firstname-lastname`.
 
 ## 1. Fork the repository on GitHub
 
 First, fork the template repository to your GitHub account.
 
-> **Note**: **Fork** means copying the parent repository in sigma-users to your GitHub account.
+> **Note**: **Fork** means copying the parent repository in sigma-users to your GitHub account.  
 > **Note**: **Repositoty** means the place to store your code. It is similar to the folder or directory.
 
 1. Go to the template repository page (https://github.com/sigma-users/personal-website-template)
@@ -73,7 +73,7 @@ First, fork the template repository to your GitHub account.
 First, set up the page to build automatically
 
 1. click on the "Actions" tab on the page of the repository you forked
-2. click on "I understand my workflows, go ahead and enable them
+2. click on "I understand my workflows" to enable them, and go ahead
 
 Set permissions to allow the deployment workflow to write to the gh-pages branch:
 
@@ -370,7 +370,7 @@ Change the basic settings of your forked repository.
 1. Click the "Settings" tab on the page of the forked repository in your GitHub account.
 2. Find the "GitHub Pages" section in the left-hand menu.
 3. Select "Deploy from a branch" as the source (to use the deployment workflow).  
-   Set the branch as `gh-pages` and `/(root)`.
+   Set the branch as `gh-pages` and `/(root)`, and click the "Save" button.  
 
 > **Note**: If there is no deployment workflow, you will set it up in a later step.
 
@@ -379,7 +379,8 @@ Change the basic settings of your forked repository.
 After a "push/commit" action, the GitHub page is generated.  
 Publish your site on GitHub Pages.
 
-1. Perform a "push" in arbitrary page (ex. edit and add space in `/content/bio/bio_en.md`, and "Commit changes...").  
+1. Perform a null "push" in arbitrary one page (ex. edit and add space in `/content/bio/bio_en.md`, and "Commit changes...").
+> **Tip**: A page updating is triggered by any "push". At the first time, it would be safe to perform this "null push".  
 2. Click the "Actions" tab in your forked repository
 3. Find and select the "Deploy to GitHub Pages" workflow
    - If the workflow is already running or completed, check its results
