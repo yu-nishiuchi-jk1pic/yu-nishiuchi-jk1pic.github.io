@@ -64,7 +64,7 @@
 
 1. テンプレートリポジトリのページ（ https://github.com/sigma-users/personal-website-template ）にアクセスします
 2. 右上の「Fork」ボタンをクリックします
-3. 例：`あなたのGithubユーザー名.github.io`のようにリポジトリ名を変更します。
+3. リポジトリ名を`personal-website-template`から`あなたのGithubユーザー名.github.io`に変更します。
 4. 「Create Fork」ボタンをクリックしてフォークを完了します
 
 > **注意**: リポジトリ名を `あなたのGitHubユーザー名.github.io` 以外にすると正常に動作しません。
@@ -366,7 +366,7 @@ index.htmlファイル内のSEOやGoogle Search Consoleの情報をカスタマ�
 フォークしたリポジトリの基本設定を変更します。
 
 1. GitHubアカウントでフォークしたリポジトリのページにある「設定」タブをクリックします。
-2. 左側のメニューから "GitHub Pages "セクションを見つける。
+2. 左側のメニューから "Pages "セクションを見つける。
 3. ソースとして "Deploy from a branch "を選択する（デプロイのワークフローを使用するため）。
    ブランチを `gh-pages` と `/(root)` に設定し、"Save"をクリックする。
 
