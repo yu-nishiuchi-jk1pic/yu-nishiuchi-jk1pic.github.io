@@ -63,7 +63,7 @@ First, fork the template repository to your GitHub account.
 
 1. Go to the template repository page (https://github.com/sigma-users/personal-website-template)
 2. Click the "Fork" button in the top right
-3. The repository name must be changed to your user name (`yourusername.github.io`)
+3. The repository name must be changed from `personal-website-template` to your user name (`yourusername.github.io`)
 4. Click the "Create Fork" button to complete the process
 
 > **Tip**: You must name the repository `yourgithubusername.github.io` .
@@ -350,7 +350,7 @@ Change the URL to your GitHub Pages URL.
 
 Customize the SEO and Google Search Console information in the index.html file.
 
-1. Open the `public/index.html` file in your forked repository
+1. Open the `index.html` file in your forked repository
 2. Replace the following information with your GitHub username or full name:
    - Change the content inside the `<title>` tag to your name
    - Edit the `content` attribute of `<meta name="description">` to match your research
@@ -368,7 +368,7 @@ Customize the SEO and Google Search Console information in the index.html file.
 Change the basic settings of your forked repository.
 
 1. Click the "Settings" tab on the page of the forked repository in your GitHub account.
-2. Find the "GitHub Pages" section in the left-hand menu.
+2. Find the "Pages" section in the left-hand menu.
 3. Select "Deploy from a branch" as the source (to use the deployment workflow).  
    Set the branch as `gh-pages` and `/(root)`, and click the "Save" button.  
 
