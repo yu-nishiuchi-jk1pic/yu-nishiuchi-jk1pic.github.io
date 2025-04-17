@@ -1,6 +1,6 @@
 {
   "header": {
-    "name": "Your Name"
+    "name": "Yu Nishiuchi"
   },
   "nav": {
     "bio": "About",
@@ -10,21 +10,20 @@
     "contact": "Contact"
   },
   "bio": {
-    "name": "Your Name",
-    "nameJp": "あなたの名前",
+    "name": "Yu Nishiuchi",
+    "nameJp": "西内 悠",
     "phd": "",
-    "phdJp": "博士（工学）",
-    "position": "Postdoctoral Researcher",
-    "affiliation": "Institute of Engineering Innovation, The University of Tokyo",
-    "github": "https://github.com/yourusername",
-    "scholar": "https://scholar.google.com/citations?user=your-id",
-    "orcid": "https://orcid.org/0000-0000-0000-0000",
-    "researchmap": "https://researchmap.jp/yourusername",
-    "linkedin": "https://www.linkedin.com/in/yourusername/",
-    "researchInterests": "Research Interests",
+    "phdJp": "",
+    "position": "",
+    "affiliation": "Department of Engineering, The University of Tokyo",
+    "github": "https://github.com/yu-nishiuchi-jk1pic",
+    "scholar": "",
+    "orcid": "",
+    "researchmap": "",
+    "linkedin": "",
+    "researchInterests": "",
     "researchTags": [
-      "Mathematics",
-      "Physics"
+      ""
     ]
   },
   "publications": {
@@ -60,13 +59,13 @@
     "location": "Location",
     "relatedLinks": "Related Links",
     "email": "Email",
-    "emailAdress": "your.email[at]example.com",
+    "emailAdress": "nishiuchi@sigma.t.u-tokyo.ac.jp",
     "phone": "Phone",
-    "phoneNumber": "+81-3-5841-7689",
+    "phoneNumber": "",
     "address": "Address",
     "addressLine1": "Electron Microscopy and Materials Science Laboratory",
     "addressLine2": "The University of Tokyo",
-    "addressLine3": "Room 419, Faculty of Engineering Bldg. 9, 2-11-16 Yayoi, Bunkyo-ku, Tokyo 113-0032, Japan",
+    "addressLine3": "Faculty of Engineering Bldg. 9, 2-11-16 Yayoi, Bunkyo-ku, Tokyo 113-0032, Japan",
     "socialMedia": "",
     "linkedin": "",
     "facebook": "",
