@@ -16,21 +16,3 @@
     "monthTo": "12",
     "isMainWork": false
   },
-  {
-    "id": "45207939",
-    "title": "Advanced Science Research Grants",
-    "titleJa": "先端科学研究助成事業",
-    "subject": "Grant-in-Aid for Young Researchers",
-    "subjectJa": "若手研究者奨励費",
-    "funder": "International Society for Science Promotion",
-    "funderJa": "国際科学振興会",
-    "description": "Development of high-precision nanomaterial analysis technology",
-    "descriptionJa": "高精度ナノ材料解析技術の開発",
-    "number": "21Y12345",
-    "yearFrom": "2021",
-    "monthFrom": "05",
-    "yearTo": "2024",
-    "monthTo": "04",
-    "isMainWork": false
-  }
-]
