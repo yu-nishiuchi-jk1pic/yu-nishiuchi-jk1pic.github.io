@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://yu-nishiuchi-jk1pic.github.io/sitemap.xml
